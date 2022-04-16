@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on soso01 blog</title>
-    <link>https://your_domain.com/categories/</link>
+    <link>https://soso01.dev/categories/</link>
     <description>Recent content in Categories on soso01 blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko</language><atom:link href="https://your_domain.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>ko</language><atom:link href="https://soso01.dev/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
