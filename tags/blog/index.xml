@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog on soso01 blog</title>
+    <link>https://your_domain.com/tags/blog/</link>
+    <description>Recent content in blog on soso01 blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Fri, 15 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://your_domain.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>블로그 개설</title>
+      <link>https://your_domain.com/posts/hello/</link>
+      <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://your_domain.com/posts/hello/</guid>
+      <description>soso01 개발 블로그 생성</description>
+    </item>
+    
+  </channel>
+</rss>
