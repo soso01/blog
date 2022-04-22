@@ -3,7 +3,8 @@ title: "블로그 개설"
 date: 2022-04-15
 description: "블로그 생성"
 summary: "soso01 개발 블로그 생성"
-tags: ["blog", "etc"]
+categories: ["etc"]
+tags: ["blog"]
 ---
 
 hugo + congo 테마로 블로그 개설했습니다.

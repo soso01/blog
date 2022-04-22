@@ -11,3 +11,8 @@ summaryLength = 0
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
+
+[taxonomies]
+  category = 'categories'
+  series = 'series'
+  tag = 'tags'
