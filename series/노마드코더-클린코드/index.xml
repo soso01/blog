@@ -6,7 +6,16 @@
     <description>Recent content in 노마드코더 클린코드 on soso01 blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
-    <lastBuildDate>Sat, 23 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://soso01.dev/series/%EB%85%B8%EB%A7%88%EB%93%9C%EC%BD%94%EB%8D%94-%ED%81%B4%EB%A6%B0%EC%BD%94%EB%93%9C/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://soso01.dev/series/%EB%85%B8%EB%A7%88%EB%93%9C%EC%BD%94%EB%8D%94-%ED%81%B4%EB%A6%B0%EC%BD%94%EB%93%9C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>클린코드 2장 의미있는 이름 요약</title>
+      <link>https://soso01.dev/posts/study/clean-code/02-naming/</link>
+      <pubDate>Sun, 24 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://soso01.dev/posts/study/clean-code/02-naming/</guid>
+      <description>클린코드 2장 의미있는 이름 요약</description>
+    </item>
+    
     <item>
       <title>클린코드 1장 깨끗한 코드 요약</title>
       <link>https://soso01.dev/posts/study/clean-code/01-clean-code/</link>
