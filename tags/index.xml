@@ -6,7 +6,25 @@
     <description>Recent content in Tags on soso01 blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
-    <lastBuildDate>Tue, 03 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://soso01.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 05 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://soso01.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>auth</title>
+      <link>https://soso01.dev/tags/auth/</link>
+      <pubDate>Thu, 05 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://soso01.dev/tags/auth/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>supabase</title>
+      <link>https://soso01.dev/tags/supabase/</link>
+      <pubDate>Thu, 05 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://soso01.dev/tags/supabase/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>etc</title>
       <link>https://soso01.dev/tags/etc/</link>

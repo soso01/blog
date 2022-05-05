@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>auth on soso01 blog</title>
+    <link>https://soso01.dev/tags/auth/</link>
+    <description>Recent content in auth on soso01 blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Thu, 05 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://soso01.dev/tags/auth/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>supabase으로 매직링크 사용자 인증</title>
+      <link>https://soso01.dev/posts/dev/supabase_auth/</link>
+      <pubDate>Thu, 05 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://soso01.dev/posts/dev/supabase_auth/</guid>
+      <description>supabase으로 매직링크 사용자 인증</description>
+    </item>
+    
+  </channel>
+</rss>
