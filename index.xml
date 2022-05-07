@@ -6,7 +6,16 @@
     <description>Recent content in soso01&#39;s dev blog :tada: on soso01 blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
-    <lastBuildDate>Thu, 05 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://soso01.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://soso01.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>클린코드 4장 주석</title>
+      <link>https://soso01.dev/posts/study/clean-code/03-function/</link>
+      <pubDate>Sat, 07 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://soso01.dev/posts/study/clean-code/03-function/</guid>
+      <description>클린코드 4장 주석</description>
+    </item>
+    
     <item>
       <title>supabase으로 매직링크 사용자 인증</title>
       <link>https://soso01.dev/posts/dev/supabase_auth/</link>
