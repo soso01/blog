@@ -13,14 +13,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>클린코드 5장 형식 맞추기 &middot; soso01 blog</title>
-    <meta name="title" content="클린코드 5장 형식 맞추기 &middot; soso01 blog" />
+  <title>클린코드 6장 객체와 자료구조 &middot; soso01 blog</title>
+    <meta name="title" content="클린코드 6장 객체와 자료구조 &middot; soso01 blog" />
   
   <meta name="description" content="My awesome website" />
   
   
   
-  <link rel="canonical" href="https://soso01.dev/posts/study/clean-code/04-convention/" />
+  <link rel="canonical" href="https://soso01.dev/posts/study/clean-code/05-object-data-structure/" />
   
   
   
@@ -66,18 +66,18 @@
   
   
   
-  <meta property="og:title" content="클린코드 5장 형식 맞추기" />
-<meta property="og:description" content="클린코드 5장 형식 맞추기" />
+  <meta property="og:title" content="클린코드 6장 객체와 자료구조" />
+<meta property="og:description" content="클린코드 6장 객체와 자료구조" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://soso01.dev/posts/study/clean-code/04-convention/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-05-08T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-05-08T00:00:00+00:00" /><meta property="og:site_name" content="soso01 blog" />
+<meta property="og:url" content="https://soso01.dev/posts/study/clean-code/05-object-data-structure/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-05-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-05-10T00:00:00+00:00" /><meta property="og:site_name" content="soso01 blog" />
 
 
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="클린코드 5장 형식 맞추기"/>
-<meta name="twitter:description" content="클린코드 5장 형식 맞추기"/>
+<meta name="twitter:title" content="클린코드 6장 객체와 자료구조"/>
+<meta name="twitter:description" content="클린코드 6장 객체와 자료구조"/>
 
   
   <script type="application/ld+json">
@@ -85,26 +85,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "클린코드 5장 형식 맞추기",
-    "headline": "클린코드 5장 형식 맞추기",
-    "description": "클린코드 5장 형식 맞추기",
-    "abstract": "클린코드 5장 형식 맞추기",
+    "name": "클린코드 6장 객체와 자료구조",
+    "headline": "클린코드 6장 객체와 자료구조",
+    "description": "클린코드 6장 객체와 자료구조",
+    "abstract": "클린코드 6장 객체와 자료구조",
     "inLanguage": "ko",
-    "url" : "https:\/\/soso01.dev\/posts\/study\/clean-code\/04-convention\/",
+    "url" : "https:\/\/soso01.dev\/posts\/study\/clean-code\/05-object-data-structure\/",
     "author" : {
       "@type": "Person",
       "name": "soso01"
     },
     "copyrightYear": "2022",
-    "dateCreated": "2022-05-08T00:00:00\u002b00:00",
-    "datePublished": "2022-05-08T00:00:00\u002b00:00",
+    "dateCreated": "2022-05-10T00:00:00\u002b00:00",
+    "datePublished": "2022-05-10T00:00:00\u002b00:00",
     
-    "dateModified": "2022-05-08T00:00:00\u002b00:00",
+    "dateModified": "2022-05-10T00:00:00\u002b00:00",
     
     "keywords": ["clean-code"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "265"
+    "wordCount": "504"
   }]
   </script>
 
@@ -272,8 +272,8 @@
   <li class="inline hidden">
     <a
       class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
-      href="/posts/study/clean-code/04-convention/"
-      >클린코드 5장 형식 맞추기</a
+      href="/posts/study/clean-code/05-object-data-structure/"
+      >클린코드 6장 객체와 자료구조</a
     ><span class="px-1 text-primary-500">/</span>
   </li>
 
@@ -282,7 +282,7 @@
 
       
       <h1 class="mt-0 mb-3 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        클린코드 5장 형식 맞추기
+        클린코드 6장 객체와 자료구조
       </h1>
       <div class="text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -317,7 +317,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2022-05-08 00:00:00 &#43;0000 UTC">2022 / 05 / 08</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
+      <time datetime="2022-05-10 00:00:00 &#43;0000 UTC">2022 / 05 / 10</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
     
 
     
@@ -367,41 +367,92 @@
     <section class="flex flex-col max-w-full mt-0 prose lg:flex-row dark:prose-invert">
       
       <div class="min-w-0 min-h-0 max-w-prose">
-        <p>프로그래머라면 형식을 깔금하게 맞춰 코드를 짜야 한다. 코드 형식을 맞추기 위한 간단한 규칙을 정하고 그 규칙을 따라야 한다. 팀으로 일한다면 팀이 합의해 규칙을 정하고 모두가 그 규칙을 따라야 한다.</p>
-<h3 id="형식을-맞추는-목적" class="relative group">형식을 맞추는 목적 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%ed%98%95%ec%8b%9d%ec%9d%84-%eb%a7%9e%ec%b6%94%eb%8a%94-%eb%aa%a9%ec%a0%81" aria-label="Anchor">#</a></span></h3>
-<ul>
-<li>‘돌아가는 코드&rsquo;가 개발자의 일차적인 의무라 여길지도 모른다.</li>
-<li>하지만 오늘 구현한 기능이 다음 버전에서 바뀔 확률은 아주 높다.</li>
-<li>그런데 오늘 구현한 코드의 가독성은 앞으로 바뀔 코드의 품질에 지대한 영향을 미친다.</li>
-<li>오랜 시간이 지나 원래 코드의 흔적을 더 이상 찾아보기 어려울 정도로 코드가 바뀌어도 맨 처음 잡아놓은 구현 스타일과 가독성 수준은 유지보수 용이성과 확장성에 계속 영향을 미친다.</li>
-<li>원래 코드는 사라질지라도 개발자의 스타일과 규율은 사라지지 않는다.</li>
+        <p>변수를 비공개로 정의하는 이유는 남들이 변수에 의존하지 않게 만들고 싶어서다.</p>
+<p>충동이든 변덕이든, 변수 타입이나 구현을 맘대로 바꾸고 싶어서다.</p>
+<p>그렇다면 어째서 수많은 프로그래머가 get함수와 set함수를 당연하게 공개해 비공개 변수를 외부로 노출하는가?</p>
+<h3 id="자료-추상화" class="relative group">자료 추상화 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%ec%9e%90%eb%a3%8c-%ec%b6%94%ec%83%81%ed%99%94" aria-label="Anchor">#</a></span></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Point1</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kt">double</span> <span class="n">x</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="kt">double</span> <span class="n">y</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Point2</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">double</span> <span class="nf">getX</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">double</span> <span class="nf">getY</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">setCartesian</span><span class="o">(</span><span class="kt">double</span> <span class="n">x</span><span class="o">,</span> <span class="kt">double</span> <span class="n">y</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">double</span> <span class="nf">getR</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">double</span> <span class="nf">getTheta</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">setPolar</span><span class="o">(</span><span class="kt">double</span> <span class="n">r</span><span class="o">,</span> <span class="kt">double</span> <span class="n">theta</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><ul>
+<li>변수를 Private으로 선언하더라도 각 값마다 조회(get)함수와 설정(set)함수를 제공한다면 구현을 외부로 노출하는 셈이다.</li>
+<li>변수 사이에 함수라는 계층을 넣는다고 구현이 저절로 감춰지는게 아니다.</li>
+<li>구현을 감추려면 추상화가 필요하다. 조회 함수와 설정 함수로 변수를 다룬다고 클래스가 되는게 아니라, 추상 인터페이스를 제공해 사용자가 구현을 모른 채 자료의 핵심을 조작할 수 있어야 진정한 의미의 클래스다.</li>
+<li>자료를 세세하게 공개하기 보다는 추상적인 개념으로 표현하는 편이 좋다. 인터페이스나 조회/설정 함수만으로 추상화가 이뤄지는게 아니다.</li>
+<li>개발자는 객체가 포함하는 자료를 표현할 가장 좋은 방법을 고민해야 한다.</li>
+<li>아무 생각없이 조회/설정 함수를 추가하는 방법이 가장 나쁘다.</li>
 </ul>
-<h3 id="적절한-행-길이를-유지하라" class="relative group">적절한 행 길이를 유지하라 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%ec%a0%81%ec%a0%88%ed%95%9c-%ed%96%89-%ea%b8%b8%ec%9d%b4%eb%a5%bc-%ec%9c%a0%ec%a7%80%ed%95%98%eb%9d%bc" aria-label="Anchor">#</a></span></h3>
+<h3 id="자료객체-비대칭" class="relative group">자료/객체 비대칭 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%ec%9e%90%eb%a3%8c%ea%b0%9d%ec%b2%b4-%eb%b9%84%eb%8c%80%ec%b9%ad" aria-label="Anchor">#</a></span></h3>
 <ul>
-<li>7개의 자바 라이브러리를 조사한 결과 파일의 길이가 500줄을 넘지 않고, 대부분 200줄 정도인 파일로 구축되어 있었다.</li>
+<li>객체는 추상화 뒤로 자료를 숨긴 채 자료를 다루는 함수만 공개한다.</li>
+<li>자료 구조는 자료를 그대로 공개하며 별다른 함수는 제공하지 않는다.</li>
+<li>절차적인 코드는 기존 자료 구조를 변경하지 않으면서 새 함수를 추가하기 쉽다. 반면, 객체지향 코드는 기존 함수를 변경하지 않으면서 새 클래스를 추가하기 쉽다.</li>
+<li>반대쪽도 참이다. 절차적인 코드는 새로운 자료구조를 추가하기 어렵다. 모든 함수를 고쳐야 한다. 객체 지향 코드는 새로운 함수를 추가하기 어렵다. 모든 클래스를 고쳐야 한다.</li>
+<li>다시말해, 객체 지향 코드에서 어려운 변경은 절차적인 코드에서 쉬우며, 절차적인 코드에서 어려운 변경은 객체지향에서 쉽다.</li>
+<li>분별있는 프로그래머는 모든 것이 객체라는 생각이 미신임을 잘 안다. 때로는 단순한 자료구조와 절차적인 코드가 가장 적합한 상황도 있다.</li>
 </ul>
-<h3 id="신문-기사처럼-작성하라" class="relative group">신문 기사처럼 작성하라 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%ec%8b%a0%eb%ac%b8-%ea%b8%b0%ec%82%ac%ec%b2%98%eb%9f%bc-%ec%9e%91%ec%84%b1%ed%95%98%eb%9d%bc" aria-label="Anchor">#</a></span></h3>
+<h3 id="디미터-법칙" class="relative group">디미터 법칙 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%eb%94%94%eb%af%b8%ed%84%b0-%eb%b2%95%ec%b9%99" aria-label="Anchor">#</a></span></h3>
 <ul>
-<li>독자는 위에서 아래로 기사를 읽는다. 최상단에 기사를 몇 마디로 요약하는 표제가 나온다. 첫 문단은 전체 기사 내용을 요약한다. 세세한 사실은 숨기고 커다란 그림을 보여준다. 쭉 읽으며 내려가면 세세한 사실이 조금씩 드러나고, 기타 세부사항이 나온다.</li>
-<li>소스파일도 신문 기사와 비슷하게 작성하자.</li>
-<li>소스파일의 첫 부분은 고차원 개념과 알고리즘을 설명하고, 아래로 내려갈수록 의도를 세세하게 묘사하자.</li>
-<li>마지막에는 가장 저차원 함수와 세부 내역이 나온다.</li>
+<li>디미터 법칙은 잘 알려진 휴리스틱으로, 모듈은 자신이 조작하는 객체의 속사정을 몰라야 한다는 법칙이다.</li>
+<li>객체는 자료를 숨기고 함수를 공개한다.</li>
+<li>즉, 객체는 조회 함수로 내부 구조를 공개하면 안 된다는 의미다. 그러면 내부 구조를 노출하는 셈이니까.</li>
 </ul>
-<h3 id="개념은-빈-행으로-분리하라" class="relative group">개념은 빈 행으로 분리하라 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%ea%b0%9c%eb%85%90%ec%9d%80-%eb%b9%88-%ed%96%89%ec%9c%bc%eb%a1%9c-%eb%b6%84%eb%a6%ac%ed%95%98%eb%9d%bc" aria-label="Anchor">#</a></span></h3>
-<ul>
-<li>거의 모든 코드는 왼쪽에서 오른쪽으로, 위에서 아래로 읽힌다.</li>
-<li>각 행은 수식이나 절을 나태내고, 일련의 행 묶음은 완결된 생각 하나를 표현한다.</li>
-<li>생각 사이는 빈 행을 넣어 분리해야 마땅하다.</li>
+<h3 id="기차-충돌" class="relative group">기차 충돌 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%ea%b8%b0%ec%b0%a8-%ec%b6%a9%eb%8f%8c" aria-label="Anchor">#</a></span></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">final</span> <span class="n">String</span> <span class="n">outputDir</span> <span class="o">=</span> <span class="n">ctxt</span><span class="o">.</span><span class="na">getOptions</span><span class="o">().</span><span class="na">getScratchDir</span><span class="o">().</span><span class="na">getAbsoultePath</span><span class="o">()</span>
+</span></span></code></pre></div><ul>
+<li>위와 같은 코드를 기차 충돌이라 부른다. 여러 객체가 한 줄로 이어진 기차처럼 보이기 때문이다.</li>
+<li>일반적으로 조잡하다 여겨지는 방식이므로 피하는 편이 좋다.</li>
+<li>위 코드는 다음과 같이 나누는 편이다.</li>
 </ul>
-<h3 id="세로-밀집도" class="relative group">세로 밀집도 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%ec%84%b8%eb%a1%9c-%eb%b0%80%ec%a7%91%eb%8f%84" aria-label="Anchor">#</a></span></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Options</span> <span class="n">opts</span> <span class="o">=</span> <span class="n">ctxt</span><span class="o">.</span><span class="na">getOptions</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">File</span> <span class="n">scratchDir</span> <span class="o">=</span> <span class="n">opts</span><span class="o">.</span><span class="na">getScratchDir</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="kd">final</span> <span class="n">String</span> <span class="n">outputDir</span> <span class="o">=</span> <span class="n">scratchDir</span><span class="o">.</span><span class="na">getAbsolutePath</span><span class="o">();</span>
+</span></span></code></pre></div><ul>
+<li>위 예제가 디미터 법칙을 위반할까? ctxt, Options, ScratchDir이 객체인지 자료구조인지에 달렸다.
 <ul>
-<li>줄바꿈이 개념을 분리한다면 세로 밀집도는 연관성을 의미한다.</li>
-<li>즉, 서로 밀접한 코드 행은 세로로 가까이 놓여야 한다.</li>
-<li>함수 연관 관계와 동작 방식을 이해하려고 이 함수에서 저 함수로 오가며 소스 파일을 위아래로 뒤지는 등 뱅뺑이를 돌았으나 결국은 미로 같은 코드 때문에 혼란만 가중된 경험이 있는가?</li>
+<li>객체라면 내부 구조를 숨겨야 하므로 확실히 디미터 법칙을 위반한다.</li>
+<li>반면, 자료 구조라면 당연히 내부 구조를 노출하므로 디미터 법칙이 적용되지 않는다.</li>
 </ul>
-<h3 id="가로-형식-맞추기" class="relative group">가로 형식 맞추기 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%ea%b0%80%eb%a1%9c-%ed%98%95%ec%8b%9d-%eb%a7%9e%ec%b6%94%ea%b8%b0" aria-label="Anchor">#</a></span></h3>
+</li>
+<li>위 예제는 조회함수를 사용하기 때문에 혼란스럽다</li>
+<li>코드를 다음과 같이 구현했다면 디미터 법칙을 거론할 필요가 없어진다.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">final</span> <span class="n">String</span> <span class="n">outputDir</span> <span class="o">=</span> <span class="n">ctxt</span><span class="o">.</span><span class="na">options</span><span class="o">.</span><span class="na">scratchDir</span><span class="o">.</span><span class="na">absolutePath</span><span class="o">;</span>
+</span></span></code></pre></div><ul>
+<li>자료구조는 무조건 함수 없이 공개 변수만 포함하고 객체는 비공개 변수와 공개 함수를 포함한다면 문제는 훨씬 간단해진다.</li>
+</ul>
+<h3 id="잡종-구조" class="relative group">잡종 구조 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%ec%9e%a1%ec%a2%85-%ea%b5%ac%ec%a1%b0" aria-label="Anchor">#</a></span></h3>
 <ul>
-<li>80자에서 120자 사이 권장</li>
+<li>이런 혼란으로 말미암아 때때로 절반은 객체, 절반은 자료구조인 잡종 구조가 나온다.</li>
+<li>잡종 구조는 중요한 기능을 수행하는 함수도 있고, 공개 변수나 공개 조회/설정 함수도 있다.</li>
+<li>이러한 잡종 구조는 새로운 함수는 물론이고 새로운 자료구조도 추가하기 어렵다.</li>
+</ul>
+<h3 id="구조체-감추기" class="relative group">구조체 감추기 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%ea%b5%ac%ec%a1%b0%ec%b2%b4-%ea%b0%90%ec%b6%94%ea%b8%b0" aria-label="Anchor">#</a></span></h3>
+<ul>
+<li>위 코드를 어떻게 개선할 수 있을까?</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">ctxt</span><span class="o">.</span><span class="na">getAbsolutePathOfScratchDirectoryOption</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">ctxt</span><span class="o">.</span><span class="na">getScratchDirectoryOption</span><span class="o">().</span><span class="na">getAbsolutePath</span><span class="o">();</span>
+</span></span></code></pre></div><ul>
+<li>둘다 맘에 들지 않는다.</li>
+<li>절대 경로가 필요한 원인을 찾자. 절대 경로를 어디서 쓰는가?</li>
+<li>위 예제에서는 임시파일을 생성하기위해 절대 경로를 가져왔다.</li>
+<li>ctxt 객체에 임시 파일을 생성하라고 시키는건 어떨까?</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">BufferedOutputStream</span> <span class="n">bos</span> <span class="o">=</span> <span class="n">ctxt</span><span class="o">.</span><span class="na">createScratchFileStream</span><span class="o">(</span><span class="n">classFileName</span><span class="o">);</span>
+</span></span></code></pre></div><ul>
+<li>객체에 맡기기 적합한 임무이다. ctxt는 내부 구조를 드러내지 않으며, 모듈에서 해당 함수는 자신이 몰라야 하는 여러 객체를 탐색할 필요가 없다.</li>
+<li>따라서 디미터 법칙을 위반하지 않는다.</li>
 </ul>
 
       </div>
@@ -496,7 +547,7 @@
       
         <a
           class="bg-neutral-300 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800 m-1 hover:bg-primary-500 hover:text-neutral rounded min-w-[2.4rem] inline-block text-center p-1"
-          href="https://www.facebook.com/sharer/sharer.php?u=https://soso01.dev/posts/study/clean-code/04-convention/&amp;quote=%ed%81%b4%eb%a6%b0%ec%bd%94%eb%93%9c%205%ec%9e%a5%20%ed%98%95%ec%8b%9d%20%eb%a7%9e%ec%b6%94%ea%b8%b0"
+          href="https://www.facebook.com/sharer/sharer.php?u=https://soso01.dev/posts/study/clean-code/05-object-data-structure/&amp;quote=%ed%81%b4%eb%a6%b0%ec%bd%94%eb%93%9c%206%ec%9e%a5%20%ea%b0%9d%ec%b2%b4%ec%99%80%20%ec%9e%90%eb%a3%8c%ea%b5%ac%ec%a1%b0"
           title="Share on Facebook"
           aria-label="Share on Facebook"
           >
@@ -513,7 +564,7 @@
       
         <a
           class="bg-neutral-300 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800 m-1 hover:bg-primary-500 hover:text-neutral rounded min-w-[2.4rem] inline-block text-center p-1"
-          href="https://twitter.com/intent/tweet/?url=https://soso01.dev/posts/study/clean-code/04-convention/&amp;text=%ed%81%b4%eb%a6%b0%ec%bd%94%eb%93%9c%205%ec%9e%a5%20%ed%98%95%ec%8b%9d%20%eb%a7%9e%ec%b6%94%ea%b8%b0"
+          href="https://twitter.com/intent/tweet/?url=https://soso01.dev/posts/study/clean-code/05-object-data-structure/&amp;text=%ed%81%b4%eb%a6%b0%ec%bd%94%eb%93%9c%206%ec%9e%a5%20%ea%b0%9d%ec%b2%b4%ec%99%80%20%ec%9e%90%eb%a3%8c%ea%b5%ac%ec%a1%b0"
           title="Tweet on Twitter"
           aria-label="Tweet on Twitter"
           >
@@ -530,7 +581,7 @@
       
         <a
           class="bg-neutral-300 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800 m-1 hover:bg-primary-500 hover:text-neutral rounded min-w-[2.4rem] inline-block text-center p-1"
-          href="https://pinterest.com/pin/create/bookmarklet/?url=https://soso01.dev/posts/study/clean-code/04-convention/&amp;description=%ed%81%b4%eb%a6%b0%ec%bd%94%eb%93%9c%205%ec%9e%a5%20%ed%98%95%ec%8b%9d%20%eb%a7%9e%ec%b6%94%ea%b8%b0"
+          href="https://pinterest.com/pin/create/bookmarklet/?url=https://soso01.dev/posts/study/clean-code/05-object-data-structure/&amp;description=%ed%81%b4%eb%a6%b0%ec%bd%94%eb%93%9c%206%ec%9e%a5%20%ea%b0%9d%ec%b2%b4%ec%99%80%20%ec%9e%90%eb%a3%8c%ea%b5%ac%ec%a1%b0"
           title="Pin on Pinterest"
           aria-label="Pin on Pinterest"
           >
@@ -547,7 +598,7 @@
       
         <a
           class="bg-neutral-300 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800 m-1 hover:bg-primary-500 hover:text-neutral rounded min-w-[2.4rem] inline-block text-center p-1"
-          href="https://reddit.com/submit/?url=https://soso01.dev/posts/study/clean-code/04-convention/&amp;resubmit=true&amp;title=%ed%81%b4%eb%a6%b0%ec%bd%94%eb%93%9c%205%ec%9e%a5%20%ed%98%95%ec%8b%9d%20%eb%a7%9e%ec%b6%94%ea%b8%b0"
+          href="https://reddit.com/submit/?url=https://soso01.dev/posts/study/clean-code/05-object-data-structure/&amp;resubmit=true&amp;title=%ed%81%b4%eb%a6%b0%ec%bd%94%eb%93%9c%206%ec%9e%a5%20%ea%b0%9d%ec%b2%b4%ec%99%80%20%ec%9e%90%eb%a3%8c%ea%b5%ac%ec%a1%b0"
           title="Submit to Reddit"
           aria-label="Submit to Reddit"
           >
@@ -564,7 +615,7 @@
       
         <a
           class="bg-neutral-300 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800 m-1 hover:bg-primary-500 hover:text-neutral rounded min-w-[2.4rem] inline-block text-center p-1"
-          href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://soso01.dev/posts/study/clean-code/04-convention/&amp;title=%ed%81%b4%eb%a6%b0%ec%bd%94%eb%93%9c%205%ec%9e%a5%20%ed%98%95%ec%8b%9d%20%eb%a7%9e%ec%b6%94%ea%b8%b0"
+          href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://soso01.dev/posts/study/clean-code/05-object-data-structure/&amp;title=%ed%81%b4%eb%a6%b0%ec%bd%94%eb%93%9c%206%ec%9e%a5%20%ea%b0%9d%ec%b2%b4%ec%99%80%20%ec%9e%90%eb%a3%8c%ea%b5%ac%ec%a1%b0"
           title="Share on LinkedIn"
           aria-label="Share on LinkedIn"
           >
@@ -581,7 +632,7 @@
       
         <a
           class="bg-neutral-300 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800 m-1 hover:bg-primary-500 hover:text-neutral rounded min-w-[2.4rem] inline-block text-center p-1"
-          href="mailto:?body=https://soso01.dev/posts/study/clean-code/04-convention/&amp;subject=%ed%81%b4%eb%a6%b0%ec%bd%94%eb%93%9c%205%ec%9e%a5%20%ed%98%95%ec%8b%9d%20%eb%a7%9e%ec%b6%94%ea%b8%b0"
+          href="mailto:?body=https://soso01.dev/posts/study/clean-code/05-object-data-structure/&amp;subject=%ed%81%b4%eb%a6%b0%ec%bd%94%eb%93%9c%206%ec%9e%a5%20%ea%b0%9d%ec%b2%b4%ec%99%80%20%ec%9e%90%eb%a3%8c%ea%b5%ac%ec%a1%b0"
           title="Send via email"
           aria-label="Send via email"
           >
@@ -608,7 +659,7 @@
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group" href="/posts/study/clean-code/04-comment/">
+            <a class="flex group" href="/posts/study/clean-code/04-convention/">
               <span
                 class="mr-3 ltr:inline rtl:hidden text-neutral-700 dark:text-neutral group-hover:text-primary-600 dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -620,11 +671,11 @@
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >클린코드 4장 주석</span
+                  >클린코드 5장 형식 맞추기</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2022-05-07 00:00:00 &#43;0000 UTC">2022 / 05 / 07</time>
+                    <time datetime="2022-05-08 00:00:00 &#43;0000 UTC">2022 / 05 / 08</time>
                   
                 </span>
               </span>
@@ -632,28 +683,6 @@
           
         </span>
         <span>
-          
-            <a class="flex text-right group" href="/posts/study/clean-code/05-object-data-structure/">
-              <span class="flex flex-col">
-                <span
-                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >클린코드 6장 객체와 자료구조</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2022-05-10 00:00:00 &#43;0000 UTC">2022 / 05 / 10</time>
-                  
-                </span>
-              </span>
-              <span
-                class="ml-3 ltr:inline rtl:hidden text-neutral-700 dark:text-neutral group-hover:text-primary-600 dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span
-                class="mr-3 ltr:hidden rtl:inline text-neutral-700 dark:text-neutral group-hover:text-primary-600 dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-            </a>
           
         </span>
       </div>
