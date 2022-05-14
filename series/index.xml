@@ -5,16 +5,6 @@
     <link>https://soso01.dev/series/</link>
     <description>Recent content in Series on soso01 blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko</language>
-    <lastBuildDate>Tue, 10 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://soso01.dev/series/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>노마드코더 클린코드</title>
-      <link>https://soso01.dev/series/%EB%85%B8%EB%A7%88%EB%93%9C%EC%BD%94%EB%8D%94-%ED%81%B4%EB%A6%B0%EC%BD%94%EB%93%9C/</link>
-      <pubDate>Tue, 10 May 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://soso01.dev/series/%EB%85%B8%EB%A7%88%EB%93%9C%EC%BD%94%EB%8D%94-%ED%81%B4%EB%A6%B0%EC%BD%94%EB%93%9C/</guid>
-      <description></description>
-    </item>
-    
+    <language>ko</language><atom:link href="https://soso01.dev/series/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

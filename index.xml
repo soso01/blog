@@ -6,22 +6,40 @@
     <description>Recent content in soso01&#39;s dev blog :tada: on soso01 blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
-    <lastBuildDate>Tue, 10 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://soso01.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://soso01.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>클린코드 7장 오류 처리</title>
+      <link>https://soso01.dev/posts/study/clean-code/07-error/</link>
+      <pubDate>Sat, 14 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://soso01.dev/posts/study/clean-code/07-error/</guid>
+      <description>클린코드 7장 오류 처리</description>
+    </item>
+    
+    <item>
+      <title>클린코드 8장 경계</title>
+      <link>https://soso01.dev/posts/study/clean-code/08-boundaries/</link>
+      <pubDate>Sat, 14 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://soso01.dev/posts/study/clean-code/08-boundaries/</guid>
+      <description>클린코드 8장 경계</description>
+    </item>
+    
     <item>
       <title>클린코드 6장 객체와 자료구조</title>
-      <link>https://soso01.dev/posts/study/clean-code/05-object-data-structure/</link>
+      <link>https://soso01.dev/posts/study/clean-code/06-object-data-structure/</link>
       <pubDate>Tue, 10 May 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://soso01.dev/posts/study/clean-code/05-object-data-structure/</guid>
+      <guid>https://soso01.dev/posts/study/clean-code/06-object-data-structure/</guid>
       <description>클린코드 6장 객체와 자료구조</description>
     </item>
     
     <item>
       <title>클린코드 5장 형식 맞추기</title>
-      <link>https://soso01.dev/posts/study/clean-code/04-convention/</link>
+      <link>https://soso01.dev/posts/study/clean-code/05-convention/</link>
       <pubDate>Sun, 08 May 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://soso01.dev/posts/study/clean-code/04-convention/</guid>
+      <guid>https://soso01.dev/posts/study/clean-code/05-convention/</guid>
       <description>클린코드 5장 형식 맞추기</description>
     </item>
     
@@ -86,15 +104,6 @@
       
       <guid>https://soso01.dev/posts/study/clean-code/01-clean-code/</guid>
       <description>클린코드 1장 깨끗한 코드 요약</description>
-    </item>
-    
-    <item>
-      <title>노마드코더 클린코드 구매 인증</title>
-      <link>https://soso01.dev/posts/study/clean-code/start-clean-code-study/</link>
-      <pubDate>Fri, 22 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://soso01.dev/posts/study/clean-code/start-clean-code-study/</guid>
-      <description>클린코드 책 구매 인증</description>
     </item>
     
     <item>
