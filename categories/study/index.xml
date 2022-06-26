@@ -6,7 +6,16 @@
     <description>Recent content in study on soso01 blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
-    <lastBuildDate>Sat, 25 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://soso01.dev/categories/study/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://soso01.dev/categories/study/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>오브젝트 2장 객체지향 프로그래밍</title>
+      <link>https://soso01.dev/posts/study/object/object-02/</link>
+      <pubDate>Sun, 26 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://soso01.dev/posts/study/object/object-02/</guid>
+      <description>오브젝트 2장 객체지향 프로그래밍</description>
+    </item>
+    
     <item>
       <title>오브젝트 1장 객체, 설계 요약</title>
       <link>https://soso01.dev/posts/study/object/object-01/</link>
