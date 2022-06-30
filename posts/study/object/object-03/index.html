@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html
+  lang="ko"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="true"
+><head>
+  <meta charset="utf-8" />
+  
+    <meta http-equiv="content-language" content="ko" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <title>오브젝트 3장 역할, 책임, 협력 &middot; soso01 blog</title>
+    <meta name="title" content="오브젝트 3장 역할, 책임, 협력 &middot; soso01 blog" />
+  
+  <meta name="description" content="My awesome website" />
+  
+  
+  
+  <link rel="canonical" href="https://soso01.dev/posts/study/object/object-03/" />
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.49a28f704ec3513d85b0ca6465b553f496e5d3ab7b6eb337d8881afc66063274c2cece3b3a33321de162d0f62714bae033c08904dd89586589e09769fff39da7.css"
+    integrity="sha512-SaKPcE7DUT2FsMpkZbVT9Jbl06t7brM32Iga/GYGMnTCzs47OjMyHeFi0PYnFLrgM8CJBN2JWGWJ4Jdp//Odpw=="
+  />
+  
+  
+  <script type="text/javascript" src="/js/appearance.min.badab316c9287a5a42a843e4eb45da65bb3d194a5a0f5fa4a3e516160e67df0b8c65f4f19a8e146436e29d583699e6cb41d6bbe99e05e1dbaa877763bad9f8e2.js" integrity="sha512-utqzFskoelpCqEPk60XaZbs9GUpaD1&#43;ko&#43;UWFg5n3wuMZfTxmo4UZDbinVg2mebLQda76Z4F4duqh3djutn44g=="></script>
+  
+    
+    
+    
+  
+  
+    
+    
+  
+  
+    
+    <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.320e9d18732f8483248bd9a4e34269c64457da85f229f15f954f0334d950f968341a3d1d7d2c65612c4d5bf35d70ea8094be667fca7c7823f135ac6b80fc1ee6.js" integrity="sha512-Mg6dGHMvhIMki9mk40JpxkRX2oXyKfFflU8DNNlQ&#43;Wg0Gj0dfSxlYSxNW/NdcOqAlL5mf8p8eCPxNaxrgPwe5g==" data-copy="Copy" data-copied="Copied"></script>
+  
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="오브젝트 3장 역할, 책임, 협력" />
+<meta property="og:description" content="오브젝트 3장 역할, 책임, 협력&#34;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://soso01.dev/posts/study/object/object-03/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-06-30T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-06-30T00:00:00+00:00" /><meta property="og:site_name" content="soso01 blog" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="오브젝트 3장 역할, 책임, 협력"/>
+<meta name="twitter:description" content="오브젝트 3장 역할, 책임, 협력&#34;"/>
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Posts",
+    "name": "오브젝트 3장 역할, 책임, 협력",
+    "headline": "오브젝트 3장 역할, 책임, 협력",
+    "description": "오브젝트 3장 역할, 책임, 협력\u0022",
+    "abstract": "오브젝트 3장 역할, 책임, 협력",
+    "inLanguage": "ko",
+    "url" : "https:\/\/soso01.dev\/posts\/study\/object\/object-03\/",
+    "author" : {
+      "@type": "Person",
+      "name": "soso01"
+    },
+    "copyrightYear": "2022",
+    "dateCreated": "2022-06-30T00:00:00\u002b00:00",
+    "datePublished": "2022-06-30T00:00:00\u002b00:00",
+    
+    "dateModified": "2022-06-30T00:00:00\u002b00:00",
+    
+    "keywords": ["object"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "1033"
+  }]
+  </script>
+
+
+  
+  
+    <meta name="generator" content="Hugo 0.101.0" />
+  
+  
+  <meta name="author" content="soso01" />
+  
+    
+      <link href="https://github.com/soso01" rel="me" />
+    
+      <link href="https://soso01.com" rel="me" />
+    
+      <link href="6125024@gmail.com" rel="me" />
+    
+  
+  
+  
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YC3XFBJYFP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-YC3XFBJYFP");
+  </script>
+
+
+  
+  
+</head>
+<body
+    class="flex flex-col h-screen px-6 m-auto text-lg leading-7 bg-neutral text-neutral-900 sm:px-14 md:px-24 lg:px-32 dark:bg-neutral-800 dark:text-neutral max-w-7xl"
+  >
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 dark:bg-neutral-600 focus:translate-y-0"
+        href="#main-content"
+        ><span class="font-bold ltr:pr-2 rtl:pl-2 text-primary-600 dark:text-primary-400"
+          >&darr;</span
+        >Skip to main content</a
+      >
+    </div><header
+  class="flex justify-between py-6 font-semibold sm:items-center sm:py-10 text-neutral-900 dark:text-neutral print:hidden"
+>
+  
+  <div>
+    
+      <a
+        class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
+        rel="me"
+        href="/"
+        >soso01 blog</a
+      >
+    
+
+  </div>
+  
+  
+    <nav>
+      <ul class="flex flex-col list-none sm:flex-row">
+        
+          <li
+            class="mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0"
+          >
+            <a
+              class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
+              href="/posts/"
+              title="Posts"
+              >Blog</a
+            >
+          </li>
+        
+          <li
+            class="mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0"
+          >
+            <a
+              class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
+              href="/categories/"
+              title="Categories"
+              >Categories</a
+            >
+          </li>
+        
+          <li
+            class="mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0"
+          >
+            <a
+              class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
+              href="/tags/"
+              title="Tags"
+              >Tags</a
+            >
+          </li>
+        
+        
+          <li
+            class="ltr:text-right rtl:text-left ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0"
+          >
+            <button
+              id="search-button"
+              class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+              title="Search (/)"
+            >
+              
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+          </li>
+        
+      </ul>
+    </nav>
+  
+</header>
+<main id="main-content" class="relative grow">
+  <article>
+    <header class="max-w-prose">
+      
+        <ol class="text-sm text-neutral-500 dark:text-neutral-400 print:hidden">
+  
+  
+    
+  
+    
+  
+  <li class="inline hidden">
+    <a
+      class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
+      href="/"
+      >soso01&#39;s dev blog :tada:</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline ">
+    <a
+      class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
+      href="/posts/"
+      >Posts</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline hidden">
+    <a
+      class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
+      href="/posts/study/object/object-03/"
+      >오브젝트 3장 역할, 책임, 협력</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+</ol>
+
+
+      
+      <h1 class="mt-0 mb-3 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        오브젝트 3장 역할, 책임, 협력
+      </h1>
+      <div class="text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2022-06-30 00:00:00 &#43;0000 UTC">2022 / 06 / 30</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">5 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+  
+    <div class="my-1 text-xs text-neutral-500 dark:text-neutral-400 ">
+      
+        
+          
+            <a
+              href="/categories/study/"
+              class="px-1 py-[1px] border rounded-md border-neutral-200 dark:border-neutral-600 hover:border-primary-300 hover:text-primary-700 dark:hover:border-primary-600 dark:hover:text-primary-400"
+              >study</a
+            >
+          
+        
+      
+        
+      
+        
+          
+            <a
+              href="/tags/object/"
+              class="px-1 py-[1px] border rounded-md border-neutral-200 dark:border-neutral-600 hover:border-primary-300 hover:text-primary-700 dark:hover:border-primary-600 dark:hover:text-primary-400"
+              >object</a
+            >
+          
+        
+      
+    </div>
+  
+
+
+      </div>
+    </header>
+    <section class="flex flex-col max-w-full mt-0 prose lg:flex-row dark:prose-invert">
+      
+      <div class="min-w-0 min-h-0 max-w-prose">
+        <ul>
+<li>객체지향의 본질은 협력하는 객체들의 공동체를 창조하는 것이다.
+<ul>
+<li>객체지향 설계의 핵심은 협력을 구성하기 위해 적절한 객체를 찾고 적절한 책임을 할당하는 과정에서 드러난다.</li>
+</ul>
+</li>
+<li>객체지향에서 가장 중요한 것은 역할, 책임, 협력이다.</li>
+</ul>
+<h2 id="01-협력" class="relative group">01. 협력 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#01-%ed%98%91%eb%a0%a5" aria-label="Anchor">#</a></span></h2>
+<ul>
+<li>협력 : 객체들이 앱의 기능을 구현하기 위해 수행하는 상호작용</li>
+<li>책임 : 객체가 협력에 참여하기 위해 수행하는 로직</li>
+<li>역할 : 객체들이 협력 안에서 수행하는 책임들이 모여 수행하는 것</li>
+</ul>
+<h3 id="협력" class="relative group">협력 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%ed%98%91%eb%a0%a5" aria-label="Anchor">#</a></span></h3>
+<ul>
+<li>객체지향 시스템은 자율적인 객체들의 공동체이다.
+<ul>
+<li>객체는 고립된 존재가 아니라 시스템의 기능이라는 더 큰 목표를 달성하기 위해 다른 객체와 협력하는 사회적 존재이다.</li>
+<li>협력은 기능을 구현할 수 있는 유일한 방법이다.</li>
+<li>메시지 전송으로부터 협력이 시작된다.</li>
+</ul>
+</li>
+<li>메시지를 수신한 객체는 메서드를 실행해 요청에 응답한다.
+<ul>
+<li>객체가 메시지를 처리할 방법은 스스로 선택한다는 점이 중요 → 자율성</li>
+</ul>
+</li>
+<li>객체를 자율적으로 만드는 가장 기본적인 방법은 내부 구현을 캡슐화하는 것이다.
+<ul>
+<li>캡슐화를 통해 변경에 대한 파급효과를 제한할 수 있기 때문에 자율적인 객체는 변경하기 쉬워진다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="협력이-설계를-위한-문맥을-결정한다" class="relative group">협력이 설계를 위한 문맥을 결정한다. <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%ed%98%91%eb%a0%a5%ec%9d%b4-%ec%84%a4%ea%b3%84%eb%a5%bc-%ec%9c%84%ed%95%9c-%eb%ac%b8%eb%a7%a5%ec%9d%84-%ea%b2%b0%ec%a0%95%ed%95%9c%eb%8b%a4" aria-label="Anchor">#</a></span></h3>
+<ul>
+<li>객체의 행동을 결정하는 것은 객체가 참여하고 있는 협력이다.
+<ul>
+<li>협력이 바뀌면 객체가 제공해야 하는 행동 역시 바뀌어야 한다.</li>
+<li>협력은 객체가 필요한 이유와 객체가 수행하는 행동의 동기를 제공한다.</li>
+</ul>
+</li>
+<li>객체의 행동을 결정하는 것이 협력이라면, 객체의 상태를 결정하는 것은 행동이다.
+<ul>
+<li>객체의 상태는 그 객체가 행동을 수행하는 데 필요한 정보가 무엇인지로 결정된다.</li>
+<li>객체는 자신의 상태를 스스로 결정하고 관리하는 자율적인 존재이기 때문에 객체가 수행하는 행동에 필요한 상태도 함께 가지고 있어야 한다.</li>
+</ul>
+</li>
+<li>상태는 객체가 행동하는데 필요한 정보에 의해 결정되고 행동은 협력 안에서 객체가 처리할 메시지로 결정된다.
+<ul>
+<li>결과적으로 객체가 참여하는 협력이 객체를 구성하는 행동과 상태 모두를 결정한다.</li>
+<li>따라서 협력은 객체를 설계하는 데 필요한 일종의 문맥을 제공한다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="02-책임" class="relative group">02. 책임 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#02-%ec%b1%85%ec%9e%84" aria-label="Anchor">#</a></span></h2>
+<h3 id="책임이란-무엇인가" class="relative group">책임이란 무엇인가 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%ec%b1%85%ec%9e%84%ec%9d%b4%eb%9e%80-%eb%ac%b4%ec%97%87%ec%9d%b8%ea%b0%80" aria-label="Anchor">#</a></span></h3>
+<ul>
+<li>협력에 참여하기 위해 객체가 수행하는 행동을 책임이라고 부른다.</li>
+<li>책임이란 객체에 의해 정의되는 응집도 있는 행위의 집합으로, 객체가 유지해야 하는 정보와 수행할 수 있는 행동에 대해 개략적으로 서술한 문장이다.</li>
+<li>객체의 책임은 무엇을 알고 있는가?(하는 것)와, 무엇을 할 수 있는가? (아는 것) 로 구성된다.
+<ul>
+<li>하는 것
+<ul>
+<li>객체를 생성하거나 계산을 수행하는 등 스스로 하는 것</li>
+<li>다른 객체의 행동을 시작시키는 것</li>
+<li>다른 객체의 활동을 제어하고 조절하는 것</li>
+</ul>
+</li>
+<li>아는 것
+<ul>
+<li>사적인 정보에 관해 아는 것</li>
+<li>관련된 객체에 관해 아는 것</li>
+<li>자신이 유도하거나 계산할 수 있는 것에 관해 아는 것</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>협력안에서 객체에게 할당한 책임이 외부의 인터페이스와 내부의 속성을 결정한다.</li>
+<li>책임과 메시지의 크기는 다르다.
+<ul>
+<li>책임은 객체가 수행할 수 있는 행동을 종합적이고 간략하게 서술하기 때문에 메시지보다 추상적이고 개념적으로도 더 크다.</li>
+</ul>
+</li>
+<li>객체지향 개발에서 가장 중요한 능력은 책임을 능숙하게 소프트웨어 객체에 할당하는 것이다.
+<ul>
+<li>적절한 협력이 적절한 책임을 제공하고, 적절한 책임을 적절한 객체에게 할당해야만 단순하고 유연한 설계를 창조할 수 있다.</li>
+<li>객체에게 얼마나 적절한 책임을 할당하느냐가 설게의 전체적인 품질을 결정한다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="책임-할당" class="relative group">책임 할당 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%ec%b1%85%ec%9e%84-%ed%95%a0%eb%8b%b9" aria-label="Anchor">#</a></span></h3>
+<ul>
+<li>자율적인 객체를 만드는 가장 기본적인 방법은 책임을 수행하는 데 필요한 정보를 가장 잘 알고 있는 전문가에게 그 책임을 할당하는 것이다.</li>
+<li>객체들 역시 협력에 필요한 지식과 방법을 가장 잘 알고 있는 객체에게 도움을 요청한다.
+<ul>
+<li>요청에 응답하기 위해 필요한 행동이 객체가 수행할 책임으로 이어진다.</li>
+</ul>
+</li>
+<li>객체에게 책임을 할당하기 위해서는 먼저 협력이라는 문맥을 정의한다.
+<ul>
+<li>협력을 설계하는 출발점은 시스템이 사용자에게 제공하는 기능을 시스템이 담당할 하나의 책임으로 바라보는 것이다.</li>
+<li>객체지향 설계는 시스템의 책임을 완료하는 데 필요한 더 작은 책임을 찾아내고 이를 객체들에게 할당하는 반복적인 과정을 통해 모양을 갖춰간다.</li>
+</ul>
+</li>
+<li>객체지향 설계는 협력에 필요한 메시지를 찾고 메시지에 적절한 객체를 선택하는 반복적인 과정을 통해 이뤄진다.
+<ul>
+<li>이렇게 결정된 메시지는 객체의 퍼블릭 인터페이스를 구성한다.</li>
+<li>협력을 설계하면서 객체의 책임을 식별해 나가는 과정에서 최종적으로 시스템을 구성하는 객체들의 인터페이스와 오퍼레이션 목록을 얻게 된다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="책임-주도-설계" class="relative group">책임 주도 설계 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%ec%b1%85%ec%9e%84-%ec%a3%bc%eb%8f%84-%ec%84%a4%ea%b3%84" aria-label="Anchor">#</a></span></h3>
+<ul>
+<li>협력을 설계하기 위해서는 책임에 초점을 맞춰야 한다.
+<ul>
+<li>어떤 책임을 선택하느냐가 전체적인 설계의 방향과 흐름을 결정한다.</li>
+<li>책임을 찾고 책임을 수행할 적절한 객체를 찾아 책임을 할당하는 방식으로 협력을 설계하는 방법을 책임주도 설계라고 부른다.</li>
+</ul>
+</li>
+<li>설계 과정
+<ul>
+<li>시스템이 사용자에게 제공해야 하는 기능인 시스템 책임을 파악한다.</li>
+<li>시스템 책임을 더 작은 책임으로 분할한다.</li>
+<li>분할된 책임을 수행할 수 있는 적절한 객체 또는 역할을 찾아 책임을 할당한다.</li>
+<li>객체가 책임을 수행하는 도중 다른 객체의 도움이 필요한 경우 이를 책임질 적절한 객체 또는 역할을 찾는다.</li>
+<li>해당 객체 또는 역할에게 책임을 할당함으로써 두 객체가 협력하게 한다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="메시지가-객체를-결정한다" class="relative group">메시지가 객체를 결정한다. <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%eb%a9%94%ec%8b%9c%ec%a7%80%ea%b0%80-%ea%b0%9d%ec%b2%b4%eb%a5%bc-%ea%b2%b0%ec%a0%95%ed%95%9c%eb%8b%a4" aria-label="Anchor">#</a></span></h3>
+<ul>
+<li>객체에게 책임을 할당하는 데 필요한 메시지를 먼저 식별하고 메시지를 처리할 객체를 나중에 선택했다는 것이 중요하다.</li>
+<li>메시지가 객체를 선택하게 해야 하는 이유
+<ul>
+<li>최소한의 인터페이스를 가질 수 있게 된다.
+<ul>
+<li>필요한 메시지가 식별될 때까지 객체의 퍼블릭 인터페이스에 어떤 것도 추가하지 않기 때문에 객체는 앱에 크지도, 작지도 않은 꼭 필요한 크기의 인터페이스를 가질 수 있다.</li>
+</ul>
+</li>
+<li>충분히 추상적인 인터페이스를 가질 수 있게 된다.
+<ul>
+<li>객체의 인터페이스는 무엇을 하는지는 표현해야 하지만 어떻게 수행하는지는 노출해선 안된다.</li>
+<li>메시지는 외부의 객체가 요청하는 무언가를 의미하기 때문에 메시지를 먼저 식별하면 무엇을 수행할지에 촞머을 맞추는 인터페이스를 얻을 수 있다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="행동이-상태를-결정한다" class="relative group">행동이 상태를 결정한다. <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%ed%96%89%eb%8f%99%ec%9d%b4-%ec%83%81%ed%83%9c%eb%a5%bc-%ea%b2%b0%ec%a0%95%ed%95%9c%eb%8b%a4" aria-label="Anchor">#</a></span></h3>
+<ul>
+<li>객체의 행동은 객체가 협력에 참여할 수 있는 유일한 방법이다.
+<ul>
+<li>객체는 협력에 필요한 행동을 제공해야 한다.</li>
+<li>객체를 객체답게 만드는 것은 상태가 아니라 행동이다.</li>
+</ul>
+</li>
+<li>객체지향을 갓 입문한 사람이 가장 쉽게 빠지는 실수가 객체의 행동이 아니라 상태에 초점을 맞추는 것이다.
+<ul>
+<li>필요한 상태가 무엇인지 먼저 결정하면 객체의 내부 구현이 인터페이스에 노출되도록 만들기 때문에 캡슐화를 저해한다.</li>
+</ul>
+</li>
+<li>캡슐화를 위반하지 않도록 구현에 대한 결정을 뒤로 미루면서 객체의 행위를 고려하기 위해서는 항상 협력이라는 문맥 안에서 객체를 생각해야 한다.</li>
+</ul>
+<h2 id="03-역할" class="relative group">03. 역할 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#03-%ec%97%ad%ed%95%a0" aria-label="Anchor">#</a></span></h2>
+<h3 id="역할과-협력" class="relative group">역할과 협력 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%ec%97%ad%ed%95%a0%ea%b3%bc-%ed%98%91%eb%a0%a5" aria-label="Anchor">#</a></span></h3>
+<ul>
+<li>객체는 협력이라는 문맥 안에서 특정한 목적을 갖게 된다.
+<ul>
+<li>객체의 목적은 협력 안에서 객체가 맡게 되는 책임의 집합으로 표시된다.</li>
+<li>책임의 집합 ⇒ 역할</li>
+</ul>
+</li>
+</ul>
+<h3 id="유연학-재사용-가능한-협력" class="relative group">유연학 재사용 가능한 협력 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%ec%9c%a0%ec%97%b0%ed%95%99-%ec%9e%ac%ec%82%ac%ec%9a%a9-%ea%b0%80%eb%8a%a5%ed%95%9c-%ed%98%91%eb%a0%a5" aria-label="Anchor">#</a></span></h3>
+<ul>
+<li>역할이 중요한 이유는 역할을 통해 유연하고 재사용 가능한 협력을 얻을 수 있기 때문이다.</li>
+<li>메시지를 수신할 수 있는 객체가 여러개라면, 그들의 대표자를 역할이라는 개념으로 추상화할 수 있음.
+<ul>
+<li>2장 예제의 AmountDiscountPolicy, PercentDiscountPolicy 각각의 객체를 추상클래스인 DiscountPolicy로 포괄해서 생각할 수 있음.</li>
+</ul>
+</li>
+<li>역할을 이용하면 불필요한 중복 코드를 제거할 수 있으며, 협력이 더 유연해진다.
+<ul>
+<li>어떤 객체라도 동일한 역할을 수행한다면 협력에 참여할 수 있게 된다.</li>
+</ul>
+</li>
+<li>책임과 역할을 중심으로 협력을 바라보는 것이 바로 변경과 확장이 용이한 유연한 설계로 나아가는 첫걸음이다.</li>
+<li>역할을 구현하는 가장 일반적인 방법은 추상 클래스와 인터페이스를 이용하는 것임.</li>
+</ul>
+<h3 id="객체-대-역할" class="relative group">객체 대 역할 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%ea%b0%9d%ec%b2%b4-%eb%8c%80-%ec%97%ad%ed%95%a0" aria-label="Anchor">#</a></span></h3>
+<ul>
+<li>역할은 객체가 참여할 수 있는 일종의 슬롯이다.
+<ul>
+<li>따라서 유용하고 재사용 가능한 설계라는 문맥에서 역할은 중요함.</li>
+</ul>
+</li>
+<li>만약 한 종류의 객체만이 협력에 참여한다면? 굳이 역할로 추상화 하지 않고 객체로 바라봐도 된다.
+<ul>
+<li>설계 초반에는 적절한 책임과 협력의 큰 그림을 탐색하는 것이 가장 중요한 목표여야 하고, 역할과 객체를 명확하게 구분짓는 것은 그렇게 중요하진 않다.</li>
+<li>구분하기 애매하다면 단순하게 객체로 시작하고 반복적으로 책임과 협력을 정제해가면서 필요한 순간에 객체로부터 역할을 분리해내는 것이 가장 좋은 방법이다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="역할과-추상화" class="relative group">역할과 추상화 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%ec%97%ad%ed%95%a0%ea%b3%bc-%ec%b6%94%ec%83%81%ed%99%94" aria-label="Anchor">#</a></span></h3>
+<ul>
+<li>역할은 공통의 책임을 바탕으로 객체의 종류를 숨기기 때문에 이런 관점에서 역할을 객체의 추상화로 볼 수 있다.</li>
+<li>역할의 가장 큰 장점은 설계의 구성 요소를 추상화할 수 있다는 것이다.</li>
+<li>추상화의 장점
+<ul>
+<li>세부 사항에 억눌리지 않고도 상위 수준의 정책을 쉽고 간단하게 표현할 수 있다.
+<ul>
+<li>협력이라는 관점에서 세부적인 사항을 무시하고 추상화에 집중하는 것이 유용하다.</li>
+</ul>
+</li>
+<li>설계를 유연하게 만든다.
+<ul>
+<li>협력 안에서 동일한 책임을 수행하는 객체들은 동일한 역할을 수행하기 때문에 서로 대체 가능하다.</li>
+<li>따라서 역할은 다양한 환경에서 다양한 객체들을 수용하게 해주므로 협력을 유연하게 만든다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </section>
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  <div class="flex">
+    
+      
+      
+    
+    <div class="place-self-center">
+      
+        <div class="text-[0.6rem] leading-3 text-neutral-500 dark:text-neutral-400 uppercase">
+          Author
+        </div>
+        <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+          soso01
+        </div>
+      
+      
+        <div class="text-sm text-neutral-700 dark:text-neutral-400">frontend</div>
+      
+      <div class="text-2xl sm:text-lg">
+  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://github.com/soso01"
+          target="_blank"
+          aria-label="Github"
+          rel="me noopener noreferrer"
+          >
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+  </span>
+
+</a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://soso01.com"
+          target="_blank"
+          aria-label="Blogger"
+          rel="me noopener noreferrer"
+          >
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M446.6 222.7c-1.8-8-6.8-15.4-12.5-18.5-1.8-1-13-2.2-25-2.7-20.1-.9-22.3-1.3-28.7-5-10.1-5.9-12.8-12.3-12.9-29.5-.1-33-13.8-63.7-40.9-91.3-19.3-19.7-40.9-33-65.5-40.5-5.9-1.8-19.1-2.4-63.3-2.9-69.4-.8-84.8.6-108.4 10C45.9 59.5 14.7 96.1 3.3 142.9 1.2 151.7.7 165.8.2 246.8c-.6 101.5.1 116.4 6.4 136.5 15.6 49.6 59.9 86.3 104.4 94.3 14.8 2.7 197.3 3.3 216 .8 32.5-4.4 58-17.5 81.9-41.9 17.3-17.7 28.1-36.8 35.2-62.1 4.9-17.6 4.5-142.8 2.5-151.7zm-322.1-63.6c7.8-7.9 10-8.2 58.8-8.2 43.9 0 45.4.1 51.8 3.4 9.3 4.7 13.4 11.3 13.4 21.9 0 9.5-3.8 16.2-12.3 21.6-4.6 2.9-7.3 3.1-50.3 3.3-26.5.2-47.7-.4-50.8-1.2-16.6-4.7-22.8-28.5-10.6-40.8zm191.8 199.8l-14.9 2.4-77.5.9c-68.1.8-87.3-.4-90.9-2-7.1-3.1-13.8-11.7-14.9-19.4-1.1-7.3 2.6-17.3 8.2-22.4 7.1-6.4 10.2-6.6 97.3-6.7 89.6-.1 89.1-.1 97.6 7.8 12.1 11.3 9.5 31.2-4.9 39.4z"/></svg>
+
+  </span>
+
+</a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="6125024@gmail.com"
+          target="_blank"
+          aria-label="Link"
+          rel="me noopener noreferrer"
+          >
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M172.5 131.1C228.1 75.51 320.5 75.51 376.1 131.1C426.1 181.1 433.5 260.8 392.4 318.3L391.3 319.9C381 334.2 361 337.6 346.7 327.3C332.3 317 328.9 297 339.2 282.7L340.3 281.1C363.2 249 359.6 205.1 331.7 177.2C300.3 145.8 249.2 145.8 217.7 177.2L105.5 289.5C73.99 320.1 73.99 372 105.5 403.5C133.3 431.4 177.3 435 209.3 412.1L210.9 410.1C225.3 400.7 245.3 404 255.5 418.4C265.8 432.8 262.5 452.8 248.1 463.1L246.5 464.2C188.1 505.3 110.2 498.7 60.21 448.8C3.741 392.3 3.741 300.7 60.21 244.3L172.5 131.1zM467.5 380C411 436.5 319.5 436.5 263 380C213 330 206.5 251.2 247.6 193.7L248.7 192.1C258.1 177.8 278.1 174.4 293.3 184.7C307.7 194.1 311.1 214.1 300.8 229.3L299.7 230.9C276.8 262.1 280.4 306.9 308.3 334.8C339.7 366.2 390.8 366.2 422.3 334.8L534.5 222.5C566 191 566 139.1 534.5 108.5C506.7 80.63 462.7 76.99 430.7 99.9L429.1 101C414.7 111.3 394.7 107.1 384.5 93.58C374.2 79.2 377.5 59.21 391.9 48.94L393.5 47.82C451 6.731 529.8 13.25 579.8 63.24C636.3 119.7 636.3 211.3 579.8 267.7L467.5 380z"/></svg>
+
+  </span>
+
+</a
+        >
+      
+    
+  </div>
+
+</div>
+    </div>
+  </div>
+
+
+      
+  
+  <section class="flex flex-row flex-wrap justify-center pt-4 text-xl">
+    
+      
+        <a
+          class="bg-neutral-300 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800 m-1 hover:bg-primary-500 hover:text-neutral rounded min-w-[2.4rem] inline-block text-center p-1"
+          href="https://www.facebook.com/sharer/sharer.php?u=https://soso01.dev/posts/study/object/object-03/&amp;quote=%ec%98%a4%eb%b8%8c%ec%a0%9d%ed%8a%b8%203%ec%9e%a5%20%ec%97%ad%ed%95%a0,%20%ec%b1%85%ec%9e%84,%20%ed%98%91%eb%a0%a5"
+          title="Share on Facebook"
+          aria-label="Share on Facebook"
+          >
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+
+  </span>
+
+</a
+        >
+      
+    
+      
+        <a
+          class="bg-neutral-300 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800 m-1 hover:bg-primary-500 hover:text-neutral rounded min-w-[2.4rem] inline-block text-center p-1"
+          href="https://twitter.com/intent/tweet/?url=https://soso01.dev/posts/study/object/object-03/&amp;text=%ec%98%a4%eb%b8%8c%ec%a0%9d%ed%8a%b8%203%ec%9e%a5%20%ec%97%ad%ed%95%a0,%20%ec%b1%85%ec%9e%84,%20%ed%98%91%eb%a0%a5"
+          title="Tweet on Twitter"
+          aria-label="Tweet on Twitter"
+          >
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+
+  </span>
+
+</a
+        >
+      
+    
+      
+        <a
+          class="bg-neutral-300 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800 m-1 hover:bg-primary-500 hover:text-neutral rounded min-w-[2.4rem] inline-block text-center p-1"
+          href="https://pinterest.com/pin/create/bookmarklet/?url=https://soso01.dev/posts/study/object/object-03/&amp;description=%ec%98%a4%eb%b8%8c%ec%a0%9d%ed%8a%b8%203%ec%9e%a5%20%ec%97%ad%ed%95%a0,%20%ec%b1%85%ec%9e%84,%20%ed%98%91%eb%a0%a5"
+          title="Pin on Pinterest"
+          aria-label="Pin on Pinterest"
+          >
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3.8-3.4 5-20.3 6.9-28.1.6-2.5.3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 51.6-.9 71.2C65.4 450.9 0 361.1 0 256 0 119 111 8 248 8s248 111 248 248z"/></svg>
+
+  </span>
+
+</a
+        >
+      
+    
+      
+        <a
+          class="bg-neutral-300 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800 m-1 hover:bg-primary-500 hover:text-neutral rounded min-w-[2.4rem] inline-block text-center p-1"
+          href="https://reddit.com/submit/?url=https://soso01.dev/posts/study/object/object-03/&amp;resubmit=true&amp;title=%ec%98%a4%eb%b8%8c%ec%a0%9d%ed%8a%b8%203%ec%9e%a5%20%ec%97%ad%ed%95%a0,%20%ec%b1%85%ec%9e%84,%20%ed%98%91%eb%a0%a5"
+          title="Submit to Reddit"
+          aria-label="Submit to Reddit"
+          >
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M201.5 305.5c-13.8 0-24.9-11.1-24.9-24.6 0-13.8 11.1-24.9 24.9-24.9 13.6 0 24.6 11.1 24.6 24.9 0 13.6-11.1 24.6-24.6 24.6zM504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-132.3-41.2c-9.4 0-17.7 3.9-23.8 10-22.4-15.5-52.6-25.5-86.1-26.6l17.4-78.3 55.4 12.5c0 13.6 11.1 24.6 24.6 24.6 13.8 0 24.9-11.3 24.9-24.9s-11.1-24.9-24.9-24.9c-9.7 0-18 5.8-22.1 13.8l-61.2-13.6c-3-.8-6.1 1.4-6.9 4.4l-19.1 86.4c-33.2 1.4-63.1 11.3-85.5 26.8-6.1-6.4-14.7-10.2-24.1-10.2-34.9 0-46.3 46.9-14.4 62.8-1.1 5-1.7 10.2-1.7 15.5 0 52.6 59.2 95.2 132 95.2 73.1 0 132.3-42.6 132.3-95.2 0-5.3-.6-10.8-1.9-15.8 31.3-16 19.8-62.5-14.9-62.5zM302.8 331c-18.2 18.2-76.1 17.9-93.6 0-2.2-2.2-6.1-2.2-8.3 0-2.5 2.5-2.5 6.4 0 8.6 22.8 22.8 87.3 22.8 110.2 0 2.5-2.2 2.5-6.1 0-8.6-2.2-2.2-6.1-2.2-8.3 0zm7.7-75c-13.6 0-24.6 11.1-24.6 24.9 0 13.6 11.1 24.6 24.6 24.6 13.8 0 24.9-11.1 24.9-24.6 0-13.8-11-24.9-24.9-24.9z"/></svg>
+
+  </span>
+
+</a
+        >
+      
+    
+      
+        <a
+          class="bg-neutral-300 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800 m-1 hover:bg-primary-500 hover:text-neutral rounded min-w-[2.4rem] inline-block text-center p-1"
+          href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://soso01.dev/posts/study/object/object-03/&amp;title=%ec%98%a4%eb%b8%8c%ec%a0%9d%ed%8a%b8%203%ec%9e%a5%20%ec%97%ad%ed%95%a0,%20%ec%b1%85%ec%9e%84,%20%ed%98%91%eb%a0%a5"
+          title="Share on LinkedIn"
+          aria-label="Share on LinkedIn"
+          >
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+
+  </span>
+
+</a
+        >
+      
+    
+      
+        <a
+          class="bg-neutral-300 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800 m-1 hover:bg-primary-500 hover:text-neutral rounded min-w-[2.4rem] inline-block text-center p-1"
+          href="mailto:?body=https://soso01.dev/posts/study/object/object-03/&amp;subject=%ec%98%a4%eb%b8%8c%ec%a0%9d%ed%8a%b8%203%ec%9e%a5%20%ec%97%ad%ed%95%a0,%20%ec%b1%85%ec%9e%84,%20%ed%98%91%eb%a0%a5"
+          title="Send via email"
+          aria-label="Send via email"
+          >
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"/></svg>
+
+  </span>
+
+</a
+        >
+      
+    
+  </section>
+
+
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="flex group" href="/posts/study/object/object-02/">
+              <span
+                class="mr-3 ltr:inline rtl:hidden text-neutral-700 dark:text-neutral group-hover:text-primary-600 dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 ltr:hidden rtl:inline text-neutral-700 dark:text-neutral group-hover:text-primary-600 dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >오브젝트 2장 객체지향 프로그래밍</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2022-06-26 00:00:00 &#43;0000 UTC">2022 / 06 / 26</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+    </footer>
+    
+  </article>
+
+      
+        <div
+          class="absolute top-[110vh] ltr:right-0 rtl:left-0 w-12 pointer-events-none bottom-[-5.5rem]"
+        >
+          <a
+            href="#the-top"
+            class="w-12 h-12 sticky pointer-events-auto top-[calc(100vh-5rem)] bg-neutral/50 dark:bg-neutral-800/50 backdrop-blur rounded-full text-xl flex items-center justify-center text-neutral-700 dark:text-neutral hover:text-primary-600 dark:hover:text-primary-400"
+            aria-label="Scroll to top"
+            title="Scroll to top"
+          >
+            &uarr;
+          </a>
+        </div>
+      
+    </main>
+    <div
+  id="search-wrapper"
+  class="fixed inset-0 z-50 flex flex-col p-4 sm:p-6 md:p-[10vh] lg:p-[12vh] w-screen h-screen cursor-default bg-neutral-500/50 backdrop-blur-sm dark:bg-neutral-900/50 invisible"
+  data-url="https://soso01.dev/"
+>
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg border-neutral-200 top-20 bg-neutral dark:bg-neutral-800 dark:border-neutral-700"
+  >
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-transparent focus:outline-2"
+          placeholder="Search"
+          tabindex="0"
+        />
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 dark:text-neutral hover:text-primary-600 dark:hover:text-primary-400"
+        title="Close (Esc)"
+      >
+        
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+<footer class="py-10 print:hidden">
+  
+  
+  <div class="flex justify-between">
+    <div>
+      
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2022
+          soso01
+      </p>
+      
+      
+        <p class="text-xs text-neutral-500 dark:text-neutral-400">
+          
+          
+          Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+            href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href="https://git.io/hugo-congo" target="_blank" rel="noopener noreferrer">Congo</a>
+        </p>
+      
+    </div>
+    
+    
+      <div
+        class="text-sm cursor-pointer text-neutral-700 dark:text-neutral hover:text-primary-600 dark:hover:text-primary-400 ltr:mr-14 rtl:ml-14"
+      >
+        <button
+          id="appearance-switcher"
+          class="w-12 h-12 "
+          type="button"
+          title="Switch to dark appearance"
+        >
+          <span class="inline dark:hidden">
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+</span>
+          <span class="hidden dark:inline">
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+</span>
+        </button>
+      </div>
+    
+  </div>
+  
+  
+</footer>
+</body>
+</html>
