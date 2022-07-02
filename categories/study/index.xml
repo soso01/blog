@@ -6,7 +6,16 @@
     <description>Recent content in study on soso01 blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
-    <lastBuildDate>Thu, 30 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://soso01.dev/categories/study/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://soso01.dev/categories/study/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>오브젝트 4장 설계품질과 트레이드오프</title>
+      <link>https://soso01.dev/posts/study/object/object-04/</link>
+      <pubDate>Sat, 02 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://soso01.dev/posts/study/object/object-04/</guid>
+      <description>오브젝트 4장 설계품질과 트레이드오프</description>
+    </item>
+    
     <item>
       <title>오브젝트 3장 역할, 책임, 협력</title>
       <link>https://soso01.dev/posts/study/object/object-03/</link>
