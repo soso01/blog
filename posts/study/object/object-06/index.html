@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html
+  lang="ko"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="true"
+><head>
+  <meta charset="utf-8" />
+  
+    <meta http-equiv="content-language" content="ko" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <title>오브젝트 6장 메시지와 인터페이스 &middot; soso01 blog</title>
+    <meta name="title" content="오브젝트 6장 메시지와 인터페이스 &middot; soso01 blog" />
+  
+  <meta name="description" content="My awesome website" />
+  
+  
+  
+  <link rel="canonical" href="https://soso01.dev/posts/study/object/object-06/" />
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.49a28f704ec3513d85b0ca6465b553f496e5d3ab7b6eb337d8881afc66063274c2cece3b3a33321de162d0f62714bae033c08904dd89586589e09769fff39da7.css"
+    integrity="sha512-SaKPcE7DUT2FsMpkZbVT9Jbl06t7brM32Iga/GYGMnTCzs47OjMyHeFi0PYnFLrgM8CJBN2JWGWJ4Jdp//Odpw=="
+  />
+  
+  
+  <script type="text/javascript" src="/js/appearance.min.badab316c9287a5a42a843e4eb45da65bb3d194a5a0f5fa4a3e516160e67df0b8c65f4f19a8e146436e29d583699e6cb41d6bbe99e05e1dbaa877763bad9f8e2.js" integrity="sha512-utqzFskoelpCqEPk60XaZbs9GUpaD1&#43;ko&#43;UWFg5n3wuMZfTxmo4UZDbinVg2mebLQda76Z4F4duqh3djutn44g=="></script>
+  
+    
+    
+    
+  
+  
+    
+    
+  
+  
+    
+    <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.320e9d18732f8483248bd9a4e34269c64457da85f229f15f954f0334d950f968341a3d1d7d2c65612c4d5bf35d70ea8094be667fca7c7823f135ac6b80fc1ee6.js" integrity="sha512-Mg6dGHMvhIMki9mk40JpxkRX2oXyKfFflU8DNNlQ&#43;Wg0Gj0dfSxlYSxNW/NdcOqAlL5mf8p8eCPxNaxrgPwe5g==" data-copy="Copy" data-copied="Copied"></script>
+  
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="오브젝트 6장 메시지와 인터페이스" />
+<meta property="og:description" content="오브젝트 6장 메시지와 인터페이스" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://soso01.dev/posts/study/object/object-06/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-07T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-07-07T00:00:00+00:00" /><meta property="og:site_name" content="soso01 blog" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="오브젝트 6장 메시지와 인터페이스"/>
+<meta name="twitter:description" content="오브젝트 6장 메시지와 인터페이스"/>
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Posts",
+    "name": "오브젝트 6장 메시지와 인터페이스",
+    "headline": "오브젝트 6장 메시지와 인터페이스",
+    "description": "오브젝트 6장 메시지와 인터페이스",
+    "abstract": "오브젝트 6장 메시지와 인터페이스",
+    "inLanguage": "ko",
+    "url" : "https:\/\/soso01.dev\/posts\/study\/object\/object-06\/",
+    "author" : {
+      "@type": "Person",
+      "name": "soso01"
+    },
+    "copyrightYear": "2022",
+    "dateCreated": "2022-07-07T00:00:00\u002b00:00",
+    "datePublished": "2022-07-07T00:00:00\u002b00:00",
+    
+    "dateModified": "2022-07-07T00:00:00\u002b00:00",
+    
+    "keywords": ["object"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "1908"
+  }]
+  </script>
+
+
+  
+  
+    <meta name="generator" content="Hugo 0.101.0" />
+  
+  
+  <meta name="author" content="soso01" />
+  
+    
+      <link href="https://github.com/soso01" rel="me" />
+    
+      <link href="https://soso01.com" rel="me" />
+    
+      <link href="6125024@gmail.com" rel="me" />
+    
+  
+  
+  
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YC3XFBJYFP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-YC3XFBJYFP");
+  </script>
+
+
+  
+  
+</head>
+<body
+    class="flex flex-col h-screen px-6 m-auto text-lg leading-7 bg-neutral text-neutral-900 sm:px-14 md:px-24 lg:px-32 dark:bg-neutral-800 dark:text-neutral max-w-7xl"
+  >
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 dark:bg-neutral-600 focus:translate-y-0"
+        href="#main-content"
+        ><span class="font-bold ltr:pr-2 rtl:pl-2 text-primary-600 dark:text-primary-400"
+          >&darr;</span
+        >Skip to main content</a
+      >
+    </div><header
+  class="flex justify-between py-6 font-semibold sm:items-center sm:py-10 text-neutral-900 dark:text-neutral print:hidden"
+>
+  
+  <div>
+    
+      <a
+        class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
+        rel="me"
+        href="/"
+        >soso01 blog</a
+      >
+    
+
+  </div>
+  
+  
+    <nav>
+      <ul class="flex flex-col list-none sm:flex-row">
+        
+          <li
+            class="mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0"
+          >
+            <a
+              class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
+              href="/posts/"
+              title="Posts"
+              >Blog</a
+            >
+          </li>
+        
+          <li
+            class="mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0"
+          >
+            <a
+              class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
+              href="/categories/"
+              title="Categories"
+              >Categories</a
+            >
+          </li>
+        
+          <li
+            class="mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0"
+          >
+            <a
+              class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
+              href="/tags/"
+              title="Tags"
+              >Tags</a
+            >
+          </li>
+        
+        
+          <li
+            class="ltr:text-right rtl:text-left ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0"
+          >
+            <button
+              id="search-button"
+              class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+              title="Search (/)"
+            >
+              
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+          </li>
+        
+      </ul>
+    </nav>
+  
+</header>
+<main id="main-content" class="relative grow">
+  <article>
+    <header class="max-w-prose">
+      
+        <ol class="text-sm text-neutral-500 dark:text-neutral-400 print:hidden">
+  
+  
+    
+  
+    
+  
+  <li class="inline hidden">
+    <a
+      class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
+      href="/"
+      >soso01&#39;s dev blog :tada:</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline ">
+    <a
+      class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
+      href="/posts/"
+      >Posts</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline hidden">
+    <a
+      class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
+      href="/posts/study/object/object-06/"
+      >오브젝트 6장 메시지와 인터페이스</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+</ol>
+
+
+      
+      <h1 class="mt-0 mb-3 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        오브젝트 6장 메시지와 인터페이스
+      </h1>
+      <div class="text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2022-07-07 00:00:00 &#43;0000 UTC">2022 / 07 / 07</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">9 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+  
+    <div class="my-1 text-xs text-neutral-500 dark:text-neutral-400 ">
+      
+        
+          
+            <a
+              href="/categories/study/"
+              class="px-1 py-[1px] border rounded-md border-neutral-200 dark:border-neutral-600 hover:border-primary-300 hover:text-primary-700 dark:hover:border-primary-600 dark:hover:text-primary-400"
+              >study</a
+            >
+          
+        
+      
+        
+      
+        
+          
+            <a
+              href="/tags/object/"
+              class="px-1 py-[1px] border rounded-md border-neutral-200 dark:border-neutral-600 hover:border-primary-300 hover:text-primary-700 dark:hover:border-primary-600 dark:hover:text-primary-400"
+              >object</a
+            >
+          
+        
+      
+    </div>
+  
+
+
+      </div>
+    </header>
+    <section class="flex flex-col max-w-full mt-0 prose lg:flex-row dark:prose-invert">
+      
+      <div class="min-w-0 min-h-0 max-w-prose">
+        <ul>
+<li>훌륭한 객체지향 코드를 얻기 위해서는 클래스가 아니라 객체를 지향해야 한다.
+<ul>
+<li>정확히는 협력 안에서 객체가 수행하는 책임에 초점을 맞춰야 한다.</li>
+<li>여기서 중요한 것은 책임이 객체가 수신할 수 있는 메시지의 기반이 된다는 것이다.</li>
+</ul>
+</li>
+<li>객체가 수신하는 메시지들이 객체의 퍼블릭 인터페이스를 구성한다.
+<ul>
+<li>훌륭한 퍼블릭 인터페이스를 얻기 위해서는 책임 주도 설계 방법을 따르는 것만으로는 부족하다.</li>
+<li>유연하고 재사용 가능한 퍼블릭 인터페이스를 만드는 데 도움이 되는 설계 원칙과 기법을 익히고 적용해야 한다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="01-협력과-메시지" class="relative group">01. 협력과 메시지 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#01-%ed%98%91%eb%a0%a5%ea%b3%bc-%eb%a9%94%ec%8b%9c%ec%a7%80" aria-label="Anchor">#</a></span></h2>
+<h3 id="클라이언트---서버-모델" class="relative group">클라이언트 - 서버 모델 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%ed%81%b4%eb%9d%bc%ec%9d%b4%ec%96%b8%ed%8a%b8---%ec%84%9c%eb%b2%84-%eb%aa%a8%eb%8d%b8" aria-label="Anchor">#</a></span></h3>
+<ul>
+<li>메시지는 객체 사이의 협력을 가능하게 하는 매개체다.
+<ul>
+<li>객체가 다른 객체에게 접근할 수 있는 유일한 방법은 메시지를 전송하는 것이다.</li>
+<li>객체는 자신의 희망을 메시지라는 형태로 전송하고 메시지를 수신한 객체는 요청을 적절히 처리한 후 응답한다.</li>
+</ul>
+</li>
+<li>두 객체 사이의 협력 관계를 설명하기 위해 사용하는 전통적인 메타포는 클라이언트-서버 모델이다.
+<ul>
+<li>협력은 클라이언트가 서버의 서비스를 요청하는 단방향의 상호작용이다.</li>
+</ul>
+</li>
+<li>객체는 협력에 참여하는 동안 클라이언트와 서버의 역할을 동시에 수행하는 것이 일반적이다.
+<ul>
+<li>협력의 관점에서 객체는 두 가지 종류의 메시지 집합으로 구성된다.</li>
+<li>하나는 객체가 수신하는 메시지의 집합이고 다른 하나는 외부의 객체에게 전송하는 메시지의 집합이다.</li>
+<li>대부분의 사람들은 객체가 수신하는 메시지의 집합에만 초점을 맞추지만 협력에 적합한 객체를 설계하기 위해서는 외부에 전송하는 메시지의 집합도 함께 고려하는게 바람직하다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="메시지와-메시지-전송" class="relative group">메시지와 메시지 전송 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%eb%a9%94%ec%8b%9c%ec%a7%80%ec%99%80-%eb%a9%94%ec%8b%9c%ec%a7%80-%ec%a0%84%ec%86%a1" aria-label="Anchor">#</a></span></h3>
+<ul>
+<li>메시지 : 객체들이 협력하기 위해 사용할 수 있는 의사소통 수단</li>
+<li>메시지는 오퍼레이션명과 인자로 구성되며, 메시지 전송은 여기에 메시지 수신자를 추가한 것이다.
+<ul>
+<li>condition.isSatisfiedBy(screening) 의 코드에서
+<ul>
+<li>condition : 수신자</li>
+<li>isSatisfiedBy : 오퍼레이션명</li>
+<li>screening : dlswk</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="메시지와-메서드" class="relative group">메시지와 메서드 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%eb%a9%94%ec%8b%9c%ec%a7%80%ec%99%80-%eb%a9%94%ec%84%9c%eb%93%9c" aria-label="Anchor">#</a></span></h3>
+<ul>
+<li>메시지를 수신했을 때 실제로 어떤 코드가 실행되는지는 메시지 수신자의 실제 타입이 무엇인가에 달려 있다.</li>
+<li>메시지를 수신했을 때 실제로 실행되는 함수 또는 프로시저를 메서드라고 부른다.
+<ul>
+<li>중요한 것은 코드상에서 동일한 이름의 변수에게 동일한 메시지를 전송하더라도 객체의 타입에 따라 실행되는 메서드가 달라질 수 있다.(다형성)</li>
+<li>객체는 메시지와 메서드라는 두 가지 서로 다른 개념을 실행 시점에 연결해야 하기 때문에 컴파일 시점과 실행 시점의 의미가 달라질 수 있다.</li>
+</ul>
+</li>
+<li>우리는 그저 메시지에 응답할 수 있는 객체가 존재하고 그 객체가 적절한 메서드를 선택해서 응답할 것이라고 믿을 수 밖에 없다.</li>
+<li>메시지와 메서드의 구분은 메시지 전송자와 메시지 수신자가 느슨하게 결합될 수 있게 한다.</li>
+</ul>
+<h3 id="퍼블릭-인터페이스와-오퍼레이션" class="relative group">퍼블릭 인터페이스와 오퍼레이션 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%ed%8d%bc%eb%b8%94%eb%a6%ad-%ec%9d%b8%ed%84%b0%ed%8e%98%ec%9d%b4%ec%8a%a4%ec%99%80-%ec%98%a4%ed%8d%bc%eb%a0%88%ec%9d%b4%ec%85%98" aria-label="Anchor">#</a></span></h3>
+<ul>
+<li>객체는 안과 밖을 구분하는 뚜렷한 경계를 가진다.
+<ul>
+<li>외부에선 오직 객체가 공개하는 메시지를 통해서만 객체와 상호작용할 수 있다.</li>
+</ul>
+</li>
+<li>프로그래밍 언어의 관점에서 퍼블릭 인터페이스에 포함된 메시지를 오퍼레이션이라고 부른다.
+<ul>
+<li>오퍼레이션은 수행 가능한 어떤 행동에 대한 추상화다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="시그니처" class="relative group">시그니처 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%ec%8b%9c%ea%b7%b8%eb%8b%88%ec%b2%98" aria-label="Anchor">#</a></span></h3>
+<ul>
+<li>오퍼레이션의 이름과 파라미터 목록을 합쳐 시그니처라고 부른다.
+<ul>
+<li>오퍼레이션은 실행 코드 없이 시그니처만을 정의한 것이다.</li>
+</ul>
+</li>
+<li>오퍼레이션의 관점에서 다형성이란 동일한 오퍼레이션 호출에 대해 서로 다른 메서드들이 실행되는 것으로 정의할 수 있다.</li>
+<li>중요한 것은 객체가 수신할 수 있는 메시지가 객체의 퍼블릭 인터페이스와 그 안에 포함될 오프레이션을 결정한다는 것이다.
+<ul>
+<li>객체의 퍼블릭 인터페이스가 객체의 품질을 결정하기 때문에 결국 메시지가 객체의 품질을 결정한다고 할 수 있음.</li>
+</ul>
+</li>
+</ul>
+<h2 id="02-인터페이스와-설계-품질" class="relative group">02. 인터페이스와 설계 품질 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#02-%ec%9d%b8%ed%84%b0%ed%8e%98%ec%9d%b4%ec%8a%a4%ec%99%80-%ec%84%a4%ea%b3%84-%ed%92%88%ec%a7%88" aria-label="Anchor">#</a></span></h2>
+<ul>
+<li>좋은 인터페이스는 최소한의 인터페이스와 추상적인 인터페이스라는 조건을 만족해야 한다.
+<ul>
+<li>최소한의 인터페이스는 꼭 필요한 오퍼레이션만을 인터페이스에 포함한다.</li>
+<li>추상적인 인터페이스는 어떻게 수행하는지가 아니라 무엇을 하는지를 표현한다.</li>
+</ul>
+</li>
+<li>최소주의를 따르면서도 추상적인 인터페이스를 설계할 수 있는 가장 좋은 방법은 책임 주도 설계 방법을 따르는 것이다.
+<ul>
+<li>책임 주도 설계 방법은 메시지를 먼저 선택함으로써 협력과는 무관한 오퍼레이션이 인터페이스에 스며드는 것을 방지한다.</li>
+<li>따라서 인터페이스는 최소의 오퍼레이션만 포함하게 된다.</li>
+<li>또한 객체가 메시지를 선택하는 것이 아니라 메시지가 객체를 선택하게 함으로써 클라이언트의 의도를 메시지에 표현할 수 있게 한다.</li>
+<li>추상적인 오퍼레이션이 인터페이스에 자연스럽게 스며들게 된다.</li>
+</ul>
+</li>
+<li>책임 주도 설계가 훌륭한 인터페이스를 얻을 지침을 제공한다고 하더라도 훌륭한 인터페이스가 가지는 공통적인 특징을 아는 것은 여러분의 안목을 넓히고 올바른 설계에 도달할 수 있는 지름길을 제공한다.</li>
+</ul>
+<h3 id="디미터-법칙" class="relative group">디미터 법칙 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%eb%94%94%eb%af%b8%ed%84%b0-%eb%b2%95%ec%b9%99" aria-label="Anchor">#</a></span></h3>
+<ul>
+<li>협력하는 객체 내부 구조에 대한 결합으로 인한 발생하는 설계 문제를 해결하기 위해 제안된 원칙이다.</li>
+<li>객체의 내부 구조에 강하게 결합되지 않도록 협력 경로를 제한하라.
+<ul>
+<li>“낮선 자에게 말하지 말라”</li>
+<li>“오직 인접한 이웃하고만 말하라”</li>
+<li>자바와 같은 .(도트)를 이용해 메시지 전송을 표현하는 언어에서는 “오직 하나의 도트만 사용하라&quot;라는 말로 요약되기도 한다.</li>
+</ul>
+</li>
+<li>디미터 법칙을 따르기 위해서는 클래스가 특정한 조건을 만족하는 대상에게만 메시지를 전송하도록 프로그래밍 해야 한다.
+<ul>
+<li>thi 객체</li>
+<li>메서드의 매개변수</li>
+<li>this의 속성</li>
+<li>this의 속성인 컬렉션 요소</li>
+<li>메서드 내에서 생성된 지역 객체</li>
+</ul>
+</li>
+<li>디미터 법칙을 따르면 부끄럼타는 코드(shy code)를 작성할 수 있다.
+<ul>
+<li>부끄럼타는 코드란 불필요한 어떤 것도 다른 객체에게 보여주지 않으며, 다른 객체의 구현에 의존하지 않는 코드를 말한다.</li>
+<li>디미터 법칙을 따르는 코드는 메시지 수신자의 내부 구조가 전송자에게 노출되지 않으며, 메시지 전송자는 수신자의 내부 구현에 결합되지 않는다.</li>
+<li>따라서 클라이언트와 서버 사이에 낮은 결합도를 유지할 수 있다.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tsx" data-lang="tsx"><span class="line"><span class="cl"><span class="nx">screening</span><span class="p">.</span><span class="nx">getMovie</span><span class="p">().</span><span class="nx">getDiscountConditions</span><span class="p">();</span>
+</span></span></code></pre></div><ul>
+<li>위 코드는 디미터 법칙을 위반하는 코드의 전형적인 모습이다.</li>
+<li>메시지 전송자가 수신자의 내부 구조에 대해 물어보고 반환받은 요소에 대해 연쇄적으로 메시지를 전송한다.
+<ul>
+<li>이와 같은 코드를 기차 충돌이라 부른다.</li>
+<li>기차 충돌은 클래스의 내부 구현이 외부로 노출됐을 때 나타나는 전형적인 형태로 메시지 전송자는 메시지 수신자의 내부 정보를 자세히 알게 된다.</li>
+<li>따라서 메시지 수신자의 캡슐화는 무너지고, 메시지 전송자가 수신자의 내부 구현에 강하게 결합된다.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tsx" data-lang="tsx"><span class="line"><span class="cl"><span class="nx">screeening</span><span class="p">.</span><span class="nx">calculateFee</span><span class="p">(</span><span class="nx">audienceCount</span><span class="p">);</span>
+</span></span></code></pre></div><ul>
+<li>자신이 원하는 것이 무엇인지를 명시하고 단순히 수행하도록 요청하자.</li>
+</ul>
+<h3 id="묻지말고-시켜라" class="relative group">묻지말고 시켜라 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%eb%ac%bb%ec%a7%80%eb%a7%90%ea%b3%a0-%ec%8b%9c%ec%bc%9c%eb%9d%bc" aria-label="Anchor">#</a></span></h3>
+<ul>
+<li>디미터 법칙은 훌륭한 메시지는 객체의 상태에 관해 묻지 말고 원하는 것을 시켜야 한다는 사실을 강조한다.
+<ul>
+<li>‘묻지말고 시켜라&rsquo;는 이런 스타일의 메시지 작성을 장려하는 원칙을 가리키는 용어다.</li>
+</ul>
+</li>
+<li>메시지 전송자는 수신자의 상태를 기반으로 결정을 내린 후 메시지 수신자의 상태를 바꿔서는 안된다.
+<ul>
+<li>해당 로직은 메시지 수신자가 담당해야 할 책임일 것이다.</li>
+<li>객체의 외부에서 해당 객체의 상태를 기반으로 결정을 내리는 것은 객체의 캡슐화를 위반한다.</li>
+</ul>
+</li>
+<li><code>절차적인 코드는 정보를 얻은 후에 결정한다. 객체지향 코드는 객체에게 그것을 하도록 시킨다</code></li>
+<li>묻지말고 시켜라 원칙을 따르면 밀접하게 연관된 정보와 행동을 함께 가지는 객체를 만들 수 있다.
+<ul>
+<li>객체지향의 기본은 함께 변경될 확률이 높은 정보와 행동을 하나의 단위로 통합하는 것이다.</li>
+<li>묻지 말고 시켜라 원칙을 따르면 객체의 정보를 이용하는 행동을 객체의 외부가 아닌 내부에 위치시키기 때문에 자연스럽게 정보와 행동을 동일한 클래스 안에 두게 된다.</li>
+<li>묻지말고 시켜라 원칙에 따르도록 메시지를 결정하다 보면 자연스럽게 정보 전문가에게 책임을 할당하게 되고 높은 응집도를 가진 클래스를 얻을 확률이 높아진다.</li>
+</ul>
+</li>
+<li>묻지말고 시켜라 원칙과 디미터 법칙은 훌륭한 인터페이스를 제공하기 위해 포함해야 하는 오퍼레이션에 대한 힌트를 제공한다.
+<ul>
+<li>상태를 묻는 오퍼레이션을 행동을 요청하는 오퍼레이션으로 대체함으로써 인터페이스를 향상시켜라.</li>
+</ul>
+</li>
+</ul>
+<h3 id="의도를-드러내는-인터페이스" class="relative group">의도를 드러내는 인터페이스 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%ec%9d%98%eb%8f%84%eb%a5%bc-%eb%93%9c%eb%9f%ac%eb%82%b4%eb%8a%94-%ec%9d%b8%ed%84%b0%ed%8e%98%ec%9d%b4%ec%8a%a4" aria-label="Anchor">#</a></span></h3>
+<ul>
+<li>
+<p>켄트백은 메서드를 명명하는 두 가지 방법을 소개함</p>
+<ul>
+<li>첫 번째는 메서드가 작업을 어떻게 수행하는지를 나타내도록 이름을 짓는 것이다.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tsx" data-lang="tsx"><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">PeriodCondition</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">isSatisfiedByPeriod</span><span class="p">(</span><span class="nx">screening</span>: <span class="kt">Screening</span><span class="p">)</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">SequenceCondition</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">isSatisfiedBySequence</span><span class="p">(</span><span class="nx">screening</span>: <span class="kt">Screening</span><span class="p">)</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><ul>
+<li>이 경우 메서드의 이름은 내부의 구현방법을 드러낸다.</li>
+<li>이런 스타일은 좋지 않은데 그 이유를 두 가지로 요약할 수 있다.
+<ul>
+<li>메서드에 대해 제대로 커뮤니케이션 하지 못한다.
+<ul>
+<li>클라이언트 관점에서 isSatisfiedbyPeriod와 isSatisfiedBySequence는 모두 할인 조건을 판단하는 동일한 작업을 수행한다.</li>
+<li>하지만 메서드의 이름이 다르기 때문에 두 메서드의 내부 구현을 정확하게 이해하지 못한다면 두 메서드가 동일한 작업을 수행한다는 사실을 알아채기 어렵다.</li>
+</ul>
+</li>
+<li>더 큰 문제는 메서드 수준에서 캡슐화를 위반한다는 것이다.
+<ul>
+<li>이 메서드들은 클라이언트로 하여금 협력하는 객체의 종류를 알도록 강요한다.</li>
+<li>PeriodCondition을 사용하는 코드를 SequenceCondition을 사용하도록 변경하려면 단순히 참조하는 객체를 변경하는 것뿐만 아니라 호출하는 메서드를 변경해야 한다.</li>
+<li>메서드 이름을 변경한다는 것은 메시지를 전송하는 클라이언트 코드도 함게 변경해야 한다는 것을 의미한다.</li>
+<li>따라서 책임을 수행하는 방법을 드러내는 메서드를 사용한 설계는 변경에 취약할 수 밖에 없다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>메서드 이름을 짓는 두 번째 방법은 ‘어떻게&rsquo;가 아니라 ‘무엇&rsquo;을 하는지 드러내는 것이다.
+<ul>
+<li>메서드의 구현이 한 가지인 경우에는 무엇을 하는지를 드러내는 이름을 짓는 것이 어려울 수 있다.</li>
+<li>하지만 무엇을 하는지를 드러내느 ㄴ이름은 코드를 읽고 이해하기 쉽게 만들뿐만 아니라 유연한 코드를 낳는 지름길이다.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tsx" data-lang="tsx"><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">PeriodCondition</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">isSatisfiedBy</span><span class="p">(</span><span class="nx">screening</span>: <span class="kt">Screening</span><span class="p">)</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">SequenceCondition</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">isSatisfiedBy</span><span class="p">(</span><span class="nx">screening</span>: <span class="kt">Screening</span><span class="p">)</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><ul>
+<li>클라이언트 입장에서 두 메서드는 동일한 메시지를 서로 다른 방법으로 처리하기 때문에 서로 대체 가능하다.</li>
+</ul>
+</li>
+<li>
+<p>메서드를 어떻게 수행하느냐가 아니라 무엇을 하느냐에 초점을 맞추면 클라이언트의 관점에서 동일한 작업을 수행하는 메서드들을 하나의 타입 계층으로 묶을 수 있는 가능성이 커진다.</p>
+</li>
+<li>
+<p>이처럼 이름을 짓는 패턴을 의드로를 드러내는 선택자라고 부른다.</p>
+</li>
+<li>
+<p>켄트백은 메서드에 의도를 드러낼 수 있는 이름을 붙이기 위해 다음과 같이 생각할 것을 조언한다.</p>
+<ul>
+<li>하나의 구현을 가진 메시지의 이름을 일반화하도록 도와주는 간단한 훈련방법은 매우 다른 두 번째 구현을 상상하는 것이다.</li>
+<li>그리고 해당 메서드에 동일한 이름을 붙인다고 상상해보라.</li>
+<li>그렇게 하면 아마도 그 순간에 여러분이 할 수 있는 가장 추상적인 이름을 메서드에 붙일 것이다.</li>
+</ul>
+</li>
+<li>
+<p>에릭 에반스는 켄트백의 의도를 드러내는 선택자를 인터페이스 레벨로 확장한 의도를 드러내는 인터페이스를 제시함.</p>
+<ul>
+<li>의도를 드러내는 인터페이스를 한 마디로 요약하면 구현과 관련된 모든 정보를 캡슐화하고 객체의 퍼블릭 인터페이스에는 협력과 관련된 의도만을 표현해야 한다는 것이다.</li>
+<li>객체에게 묻지말고 시키되 구현 방법이 아닌 클라이언트의 의도를 드러내야 한다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="함께-모으기" class="relative group">함께 모으기 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%ed%95%a8%ea%bb%98-%eb%aa%a8%ec%9c%bc%ea%b8%b0" aria-label="Anchor">#</a></span></h3>
+<ul>
+<li>근본적으로 디미터 법칙을 위반하는 설계는 인터페이스와 구현의 분리 원칙을 위반한다.</li>
+<li>일반적으로 프로그램에 노출되는 객체 사이의 관계가 많아질수록 결합도가 높아지기 때문에 프로그램은 불안정해진다.</li>
+</ul>
+<h2 id="03-원칙의-함정" class="relative group">03. 원칙의 함정 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#03-%ec%9b%90%ec%b9%99%ec%9d%98-%ed%95%a8%ec%a0%95" aria-label="Anchor">#</a></span></h2>
+<ul>
+<li>위에서 배운 설계원칙은 훌륭하지만 절대적인 원칙은 아니다.</li>
+<li>소프트웨어 설계에 법칙이란 존재하지 않는다.
+<ul>
+<li>법칙에는 예외가 없지만 원칙에는 예외가 넘쳐난다.</li>
+</ul>
+</li>
+<li>설계는 트레이드오프의 산물이다.
+<ul>
+<li>초보자는 원칙을 맹목적으로 추종하고, 적용하려는 원칙이 서로 충돌하는 경우에 원칙에 정당성을 부여하고 억지로 끼워맞추려고 노력한다.</li>
+<li>결과적으로 설계는 일관성을 잃어버리고 코드는 무질서 속에 파묻히며 개발자는 길을 잃은 채 방황하게 된다.</li>
+</ul>
+</li>
+<li>원칙이 현재 상황에 부적합하다고 판단된다면 과감하게 원칙을 무시하라.</li>
+<li>원칙을 아는 것보다 더 중요한 것은 언제 원칙이 유용하고 언제 유용하지 않은지를 판단할 수 있는 능력을 기르는 것이다.</li>
+</ul>
+<h3 id="디미터-법칙은-하나의-도트를-강제하는-규칙이-아니다" class="relative group">디미터 법칙은 하나의 도트(.)를 강제하는 규칙이 아니다. <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%eb%94%94%eb%af%b8%ed%84%b0-%eb%b2%95%ec%b9%99%ec%9d%80-%ed%95%98%eb%82%98%ec%9d%98-%eb%8f%84%ed%8a%b8%eb%a5%bc-%ea%b0%95%ec%a0%9c%ed%95%98%eb%8a%94-%ea%b7%9c%ec%b9%99%ec%9d%b4-%ec%95%84%eb%8b%88%eb%8b%a4" aria-label="Anchor">#</a></span></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tsx" data-lang="tsx"><span class="line"><span class="cl"><span class="nx">Instream</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="nx">x</span> <span class="o">-&gt;</span> <span class="nx">x</span> <span class="o">-&gt;</span> <span class="mi">10</span><span class="p">).</span><span class="nx">distinct</span><span class="p">().</span><span class="nx">count</span><span class="p">();</span>
+</span></span></code></pre></div><ul>
+<li>위 코드는 디미터 법칙을 위반하지 않는다.
+<ul>
+<li>디미터 법칙은 결합도돠 관련된 것이며, 이 결합도가 문제가 되는 것은 객체의 내부 구조가 외부로 노출되는 경우로 한정한다.</li>
+<li>Instream은 다른 Instream으로 변환할 뿐, 객체를 둘러싸고 있는 캡슐은 그대로 유지된다.</li>
+</ul>
+</li>
+<li>기차 충돌처럼 보이는 코드라도 객체의 내부 구현에 대한 어떤 정보도 외부로 유출하지 않는다면 그것은 디미터 법칙을 준수한 것이다.</li>
+</ul>
+<h3 id="결합도와-응집도의-충돌" class="relative group">결합도와 응집도의 충돌 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%ea%b2%b0%ed%95%a9%eb%8f%84%ec%99%80-%ec%9d%91%ec%a7%91%eb%8f%84%ec%9d%98-%ec%b6%a9%eb%8f%8c" aria-label="Anchor">#</a></span></h3>
+<ul>
+<li>묻지말고 시켜라와 디미터 법칙을 준수하는 것이 항상 긍정적인 결과로만 귀결되는 것은 아니다.
+<ul>
+<li>모든 상황에서 맹목적으로 위임 메서드를 추가하면 같은 퍼블릭 인터페이스 안에 어울리지 않는 오퍼레이션들이 공존하게 된다.</li>
+<li>결과적으로 객체는 상관없는 책임들을 한꺼번에 떠안게 되기 때문에 결과적으로 응집도가 낮아진다.</li>
+</ul>
+</li>
+<li>클래스는 하나의 변경 원인만을 가져야 한다.
+<ul>
+<li>서로 상관없는 책임들이 함께 뭉쳐있는 클래스는 응집도가 낮으며 작은 변경으로도 쉽게 무너질 수 있다.</li>
+<li>따라서 디미터 법칙과 묻지 말고 시켜라 원칙을 무작정 따르면 응집도가 낮은 객체로 넘쳐날 것이다.</li>
+</ul>
+</li>
+<li>PeriodCondition클래스의 isSatisfiedBy 메서드를 screening으로 옮기면?
+<ul>
+<li>PeriodCondition 클래스에서 screening의 내부상태를 사용하기 때문에 캡슐화를 위반한 것은 맞다.</li>
+<li>하지만 할인 여부를 판단하는 로직의 본질적인 책임은 screening이 아닌 periodCondition 객체이다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="04-명령-쿼리-분리-원칙" class="relative group">04. 명령-쿼리 분리 원칙 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#04-%eb%aa%85%eb%a0%b9-%ec%bf%bc%eb%a6%ac-%eb%b6%84%eb%a6%ac-%ec%9b%90%ec%b9%99" aria-label="Anchor">#</a></span></h2>
+<ul>
+<li>
+<p>명령-쿼리 분리 원칙은 퍼블릭 인터페이스에 오퍼레이션을 정의할 때 참고할 수 있는 지침을 제공한다.</p>
+</li>
+<li>
+<p>어떤 절차를 묶어 호출 가능하도록 이름을 부여한 기능 모듈을 루틴이라고 부른다.</p>
+<ul>
+<li>루틴은 다시 프로시저와 함수로 구분할 수 있다.</li>
+<li>프로시저는 부수효과를 발생시킬 수 있지만 값을 반환하지 않는다.</li>
+<li>함수는 값을 반환할 수 있지만 부수효과를 발생할 수 없다.</li>
+</ul>
+</li>
+<li>
+<p>명령과 쿼리는 객체의 인터페이스 측면에서 프로시저와 함수를 부르는 또 다른 이름이다.</p>
+<ul>
+<li>객체의 상태를 수정하는 오퍼레이션을 명령이라고 부르고 객체와 관련된 정보를 반환하는 오퍼레이션을 쿼리라고 부른다.</li>
+<li>개념적으로 명령은 프로시저와 동일하고 쿼리는 함수와 동일하다.</li>
+</ul>
+</li>
+<li>
+<p>명령-쿼리 분리 원칙의 요지는 오퍼레이션은 부수효과를 발생시키는 명령이거나 부수효과를 발생시키지 않는 쿼리 중 하나여야 한다는 것이다.</p>
+<ul>
+<li>어떤 오퍼레이션도 명령인 동시에 쿼리여서는 안된다.</li>
+</ul>
+</li>
+<li>
+<p>명령-쿼리 분리 원칙을 한 문장으로 표현하면 “질문이 답변을 수정해서는 안된다”는 것이다.</p>
+<ul>
+<li>명령은 상태를 변경할 수 있지만 상태를 반환해서는 안 된다.</li>
+<li>쿼리는 객체의 상태를 반환할 수 있지만 상태를 변경해서는 안된다.</li>
+</ul>
+</li>
+<li>
+<p>부수효과를 발생시키지 않는 것만을 함수로 제한함으로써 소프트웨어에서 말하는 ‘함수’의 개념이 일반 수학에서의 개념과 상충되지 않도록 한다.</p>
+<ul>
+<li>객체를 변경하지만 직접적으로 값을 반환하지 않는 명령과 객체에 대한 정보를 반환하지만 변경하지 않는 쿼리간의 명확한 구분을 유지한다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="반복-일정의-명령과-쿼리-분리하기" class="relative group">반복 일정의 명령과 쿼리 분리하기 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%eb%b0%98%eb%b3%b5-%ec%9d%bc%ec%a0%95%ec%9d%98-%eb%aa%85%eb%a0%b9%ea%b3%bc-%ec%bf%bc%eb%a6%ac-%eb%b6%84%eb%a6%ac%ed%95%98%ea%b8%b0" aria-label="Anchor">#</a></span></h3>
+<ul>
+<li>명령과 쿼리를 뒤섞으면 실행 결과를 예측하기 어려워진다.</li>
+<li>겉으로 보기에는 쿼리처럼 보이지만 내부적으로 부수효과를 가지는 메서드는 이해하기 어렵고, 잘못 사용하기 쉬우며, 버그를 양산하는 경향이 있다.</li>
+<li>가장 깔끔한 해결책은 명령과 쿼리를 명확하게 분리하는 것이다.</li>
+</ul>
+<h3 id="명령-쿼리-분리와-참조-투명성" class="relative group">명령-쿼리 분리와 참조 투명성 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%eb%aa%85%eb%a0%b9-%ec%bf%bc%eb%a6%ac-%eb%b6%84%eb%a6%ac%ec%99%80-%ec%b0%b8%ec%a1%b0-%ed%88%ac%eb%aa%85%ec%84%b1" aria-label="Anchor">#</a></span></h3>
+<ul>
+<li>명령과 쿼리를 분리함으로써 명령형 언어의 틀 안에서 참조 투명성의 장점을 제한적으로나마 누릴 수 있게 된다.
+<ul>
+<li>참조 투명성이라는 특성을 잘 활용하면 버그가 적고, 디버깅이 용이하며, 쿼리의 순서에 따라 실행 결과가 변하지 않는 코드를 작성할 수 있다.</li>
+</ul>
+</li>
+<li>컴퓨터의 세계와 수학의 세계를 나누는 가장 큰 특징은 부수효과의 존재 유무다.
+<ul>
+<li>프로그램에서 부수효과를 발생시키는 두 가지 대표적인 문법은 대입문과 ㅎ마수다.</li>
+<li>수학의 경우 x의 값을 초기화한 후에는 값을 변경하는 것이 불가능하지만 프로그램에서는 대입문을 이용해 다른 값으로 변경하는 것이 가능하다.</li>
+<li>함수는 내부에 부수효과를 포함할 경우 동인한 인자를 전달하더라도 부수효과에 의해 그 결괏값이 매번 달라질 수 있다.</li>
+</ul>
+</li>
+<li>참조 투명성이란 “어떤 표현식 e가 있을 때 e의 값으로 e가 나타나는 모든 위치를 교체하더라도 결과가 달라지지 않는 특성&quot; 이다.
+<ul>
+<li>f(1)이 항상 3으로 불변성을 가진다면 참조 투명성을 만족시킬 수 있다.</li>
+</ul>
+</li>
+<li>참조 투명성을 만족하는 식은 우리에게 두 가지 장점을 제공한다.
+<ul>
+<li>모든 함수를 이미 알고 있는 하나의 결괏값으로 대체할 수 있기 때문에 식을 쉽게 계산할 수 있다.</li>
+<li>모든 곳에서 함수의 결괏값이 동일하기 때문에 식의 순서를 변경하더라도 각 식의 결과는 달라지지 않는다.</li>
+</ul>
+</li>
+<li>객체 지향 패러다임이 객체의 상태 변경이라는 부수효과를 기반으로 하기 때문에 참조 투명성은 예외에 가깝다.</li>
+<li>명령-쿼리 분리원칙은 부수효과를 가지는 명령으로부터 부수효과를 가지지 않는 쿼리를 명백하게 분리함으로써 제한적이나마 참조 투명성의 혜택을 누릴 수 있게 된다.</li>
+</ul>
+
+      </div>
+    </section>
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  <div class="flex">
+    
+      
+      
+    
+    <div class="place-self-center">
+      
+        <div class="text-[0.6rem] leading-3 text-neutral-500 dark:text-neutral-400 uppercase">
+          Author
+        </div>
+        <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+          soso01
+        </div>
+      
+      
+        <div class="text-sm text-neutral-700 dark:text-neutral-400">frontend</div>
+      
+      <div class="text-2xl sm:text-lg">
+  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://github.com/soso01"
+          target="_blank"
+          aria-label="Github"
+          rel="me noopener noreferrer"
+          >
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+  </span>
+
+</a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://soso01.com"
+          target="_blank"
+          aria-label="Blogger"
+          rel="me noopener noreferrer"
+          >
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M446.6 222.7c-1.8-8-6.8-15.4-12.5-18.5-1.8-1-13-2.2-25-2.7-20.1-.9-22.3-1.3-28.7-5-10.1-5.9-12.8-12.3-12.9-29.5-.1-33-13.8-63.7-40.9-91.3-19.3-19.7-40.9-33-65.5-40.5-5.9-1.8-19.1-2.4-63.3-2.9-69.4-.8-84.8.6-108.4 10C45.9 59.5 14.7 96.1 3.3 142.9 1.2 151.7.7 165.8.2 246.8c-.6 101.5.1 116.4 6.4 136.5 15.6 49.6 59.9 86.3 104.4 94.3 14.8 2.7 197.3 3.3 216 .8 32.5-4.4 58-17.5 81.9-41.9 17.3-17.7 28.1-36.8 35.2-62.1 4.9-17.6 4.5-142.8 2.5-151.7zm-322.1-63.6c7.8-7.9 10-8.2 58.8-8.2 43.9 0 45.4.1 51.8 3.4 9.3 4.7 13.4 11.3 13.4 21.9 0 9.5-3.8 16.2-12.3 21.6-4.6 2.9-7.3 3.1-50.3 3.3-26.5.2-47.7-.4-50.8-1.2-16.6-4.7-22.8-28.5-10.6-40.8zm191.8 199.8l-14.9 2.4-77.5.9c-68.1.8-87.3-.4-90.9-2-7.1-3.1-13.8-11.7-14.9-19.4-1.1-7.3 2.6-17.3 8.2-22.4 7.1-6.4 10.2-6.6 97.3-6.7 89.6-.1 89.1-.1 97.6 7.8 12.1 11.3 9.5 31.2-4.9 39.4z"/></svg>
+
+  </span>
+
+</a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="6125024@gmail.com"
+          target="_blank"
+          aria-label="Link"
+          rel="me noopener noreferrer"
+          >
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M172.5 131.1C228.1 75.51 320.5 75.51 376.1 131.1C426.1 181.1 433.5 260.8 392.4 318.3L391.3 319.9C381 334.2 361 337.6 346.7 327.3C332.3 317 328.9 297 339.2 282.7L340.3 281.1C363.2 249 359.6 205.1 331.7 177.2C300.3 145.8 249.2 145.8 217.7 177.2L105.5 289.5C73.99 320.1 73.99 372 105.5 403.5C133.3 431.4 177.3 435 209.3 412.1L210.9 410.1C225.3 400.7 245.3 404 255.5 418.4C265.8 432.8 262.5 452.8 248.1 463.1L246.5 464.2C188.1 505.3 110.2 498.7 60.21 448.8C3.741 392.3 3.741 300.7 60.21 244.3L172.5 131.1zM467.5 380C411 436.5 319.5 436.5 263 380C213 330 206.5 251.2 247.6 193.7L248.7 192.1C258.1 177.8 278.1 174.4 293.3 184.7C307.7 194.1 311.1 214.1 300.8 229.3L299.7 230.9C276.8 262.1 280.4 306.9 308.3 334.8C339.7 366.2 390.8 366.2 422.3 334.8L534.5 222.5C566 191 566 139.1 534.5 108.5C506.7 80.63 462.7 76.99 430.7 99.9L429.1 101C414.7 111.3 394.7 107.1 384.5 93.58C374.2 79.2 377.5 59.21 391.9 48.94L393.5 47.82C451 6.731 529.8 13.25 579.8 63.24C636.3 119.7 636.3 211.3 579.8 267.7L467.5 380z"/></svg>
+
+  </span>
+
+</a
+        >
+      
+    
+  </div>
+
+</div>
+    </div>
+  </div>
+
+
+      
+  
+  <section class="flex flex-row flex-wrap justify-center pt-4 text-xl">
+    
+      
+        <a
+          class="bg-neutral-300 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800 m-1 hover:bg-primary-500 hover:text-neutral rounded min-w-[2.4rem] inline-block text-center p-1"
+          href="https://www.facebook.com/sharer/sharer.php?u=https://soso01.dev/posts/study/object/object-06/&amp;quote=%ec%98%a4%eb%b8%8c%ec%a0%9d%ed%8a%b8%206%ec%9e%a5%20%eb%a9%94%ec%8b%9c%ec%a7%80%ec%99%80%20%ec%9d%b8%ed%84%b0%ed%8e%98%ec%9d%b4%ec%8a%a4"
+          title="Share on Facebook"
+          aria-label="Share on Facebook"
+          >
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+
+  </span>
+
+</a
+        >
+      
+    
+      
+        <a
+          class="bg-neutral-300 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800 m-1 hover:bg-primary-500 hover:text-neutral rounded min-w-[2.4rem] inline-block text-center p-1"
+          href="https://twitter.com/intent/tweet/?url=https://soso01.dev/posts/study/object/object-06/&amp;text=%ec%98%a4%eb%b8%8c%ec%a0%9d%ed%8a%b8%206%ec%9e%a5%20%eb%a9%94%ec%8b%9c%ec%a7%80%ec%99%80%20%ec%9d%b8%ed%84%b0%ed%8e%98%ec%9d%b4%ec%8a%a4"
+          title="Tweet on Twitter"
+          aria-label="Tweet on Twitter"
+          >
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+
+  </span>
+
+</a
+        >
+      
+    
+      
+        <a
+          class="bg-neutral-300 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800 m-1 hover:bg-primary-500 hover:text-neutral rounded min-w-[2.4rem] inline-block text-center p-1"
+          href="https://pinterest.com/pin/create/bookmarklet/?url=https://soso01.dev/posts/study/object/object-06/&amp;description=%ec%98%a4%eb%b8%8c%ec%a0%9d%ed%8a%b8%206%ec%9e%a5%20%eb%a9%94%ec%8b%9c%ec%a7%80%ec%99%80%20%ec%9d%b8%ed%84%b0%ed%8e%98%ec%9d%b4%ec%8a%a4"
+          title="Pin on Pinterest"
+          aria-label="Pin on Pinterest"
+          >
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3.8-3.4 5-20.3 6.9-28.1.6-2.5.3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 51.6-.9 71.2C65.4 450.9 0 361.1 0 256 0 119 111 8 248 8s248 111 248 248z"/></svg>
+
+  </span>
+
+</a
+        >
+      
+    
+      
+        <a
+          class="bg-neutral-300 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800 m-1 hover:bg-primary-500 hover:text-neutral rounded min-w-[2.4rem] inline-block text-center p-1"
+          href="https://reddit.com/submit/?url=https://soso01.dev/posts/study/object/object-06/&amp;resubmit=true&amp;title=%ec%98%a4%eb%b8%8c%ec%a0%9d%ed%8a%b8%206%ec%9e%a5%20%eb%a9%94%ec%8b%9c%ec%a7%80%ec%99%80%20%ec%9d%b8%ed%84%b0%ed%8e%98%ec%9d%b4%ec%8a%a4"
+          title="Submit to Reddit"
+          aria-label="Submit to Reddit"
+          >
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M201.5 305.5c-13.8 0-24.9-11.1-24.9-24.6 0-13.8 11.1-24.9 24.9-24.9 13.6 0 24.6 11.1 24.6 24.9 0 13.6-11.1 24.6-24.6 24.6zM504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-132.3-41.2c-9.4 0-17.7 3.9-23.8 10-22.4-15.5-52.6-25.5-86.1-26.6l17.4-78.3 55.4 12.5c0 13.6 11.1 24.6 24.6 24.6 13.8 0 24.9-11.3 24.9-24.9s-11.1-24.9-24.9-24.9c-9.7 0-18 5.8-22.1 13.8l-61.2-13.6c-3-.8-6.1 1.4-6.9 4.4l-19.1 86.4c-33.2 1.4-63.1 11.3-85.5 26.8-6.1-6.4-14.7-10.2-24.1-10.2-34.9 0-46.3 46.9-14.4 62.8-1.1 5-1.7 10.2-1.7 15.5 0 52.6 59.2 95.2 132 95.2 73.1 0 132.3-42.6 132.3-95.2 0-5.3-.6-10.8-1.9-15.8 31.3-16 19.8-62.5-14.9-62.5zM302.8 331c-18.2 18.2-76.1 17.9-93.6 0-2.2-2.2-6.1-2.2-8.3 0-2.5 2.5-2.5 6.4 0 8.6 22.8 22.8 87.3 22.8 110.2 0 2.5-2.2 2.5-6.1 0-8.6-2.2-2.2-6.1-2.2-8.3 0zm7.7-75c-13.6 0-24.6 11.1-24.6 24.9 0 13.6 11.1 24.6 24.6 24.6 13.8 0 24.9-11.1 24.9-24.6 0-13.8-11-24.9-24.9-24.9z"/></svg>
+
+  </span>
+
+</a
+        >
+      
+    
+      
+        <a
+          class="bg-neutral-300 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800 m-1 hover:bg-primary-500 hover:text-neutral rounded min-w-[2.4rem] inline-block text-center p-1"
+          href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://soso01.dev/posts/study/object/object-06/&amp;title=%ec%98%a4%eb%b8%8c%ec%a0%9d%ed%8a%b8%206%ec%9e%a5%20%eb%a9%94%ec%8b%9c%ec%a7%80%ec%99%80%20%ec%9d%b8%ed%84%b0%ed%8e%98%ec%9d%b4%ec%8a%a4"
+          title="Share on LinkedIn"
+          aria-label="Share on LinkedIn"
+          >
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+
+  </span>
+
+</a
+        >
+      
+    
+      
+        <a
+          class="bg-neutral-300 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800 m-1 hover:bg-primary-500 hover:text-neutral rounded min-w-[2.4rem] inline-block text-center p-1"
+          href="mailto:?body=https://soso01.dev/posts/study/object/object-06/&amp;subject=%ec%98%a4%eb%b8%8c%ec%a0%9d%ed%8a%b8%206%ec%9e%a5%20%eb%a9%94%ec%8b%9c%ec%a7%80%ec%99%80%20%ec%9d%b8%ed%84%b0%ed%8e%98%ec%9d%b4%ec%8a%a4"
+          title="Send via email"
+          aria-label="Send via email"
+          >
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"/></svg>
+
+  </span>
+
+</a
+        >
+      
+    
+  </section>
+
+
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="flex group" href="/posts/study/object/object-05/">
+              <span
+                class="mr-3 ltr:inline rtl:hidden text-neutral-700 dark:text-neutral group-hover:text-primary-600 dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 ltr:hidden rtl:inline text-neutral-700 dark:text-neutral group-hover:text-primary-600 dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >오브젝트 5장 책임 할당하기</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2022-07-05 00:00:00 &#43;0000 UTC">2022 / 07 / 05</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+    </footer>
+    
+  </article>
+
+      
+        <div
+          class="absolute top-[110vh] ltr:right-0 rtl:left-0 w-12 pointer-events-none bottom-[-5.5rem]"
+        >
+          <a
+            href="#the-top"
+            class="w-12 h-12 sticky pointer-events-auto top-[calc(100vh-5rem)] bg-neutral/50 dark:bg-neutral-800/50 backdrop-blur rounded-full text-xl flex items-center justify-center text-neutral-700 dark:text-neutral hover:text-primary-600 dark:hover:text-primary-400"
+            aria-label="Scroll to top"
+            title="Scroll to top"
+          >
+            &uarr;
+          </a>
+        </div>
+      
+    </main>
+    <div
+  id="search-wrapper"
+  class="fixed inset-0 z-50 flex flex-col p-4 sm:p-6 md:p-[10vh] lg:p-[12vh] w-screen h-screen cursor-default bg-neutral-500/50 backdrop-blur-sm dark:bg-neutral-900/50 invisible"
+  data-url="https://soso01.dev/"
+>
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg border-neutral-200 top-20 bg-neutral dark:bg-neutral-800 dark:border-neutral-700"
+  >
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-transparent focus:outline-2"
+          placeholder="Search"
+          tabindex="0"
+        />
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 dark:text-neutral hover:text-primary-600 dark:hover:text-primary-400"
+        title="Close (Esc)"
+      >
+        
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+<footer class="py-10 print:hidden">
+  
+  
+  <div class="flex justify-between">
+    <div>
+      
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2022
+          soso01
+      </p>
+      
+      
+        <p class="text-xs text-neutral-500 dark:text-neutral-400">
+          
+          
+          Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+            href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href="https://git.io/hugo-congo" target="_blank" rel="noopener noreferrer">Congo</a>
+        </p>
+      
+    </div>
+    
+    
+      <div
+        class="text-sm cursor-pointer text-neutral-700 dark:text-neutral hover:text-primary-600 dark:hover:text-primary-400 ltr:mr-14 rtl:ml-14"
+      >
+        <button
+          id="appearance-switcher"
+          class="w-12 h-12 "
+          type="button"
+          title="Switch to dark appearance"
+        >
+          <span class="inline dark:hidden">
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+</span>
+          <span class="hidden dark:inline">
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+</span>
+        </button>
+      </div>
+    
+  </div>
+  
+  
+</footer>
+</body>
+</html>
