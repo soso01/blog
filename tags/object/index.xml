@@ -6,7 +6,16 @@
     <description>Recent content in object on soso01 blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
-    <lastBuildDate>Thu, 07 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://soso01.dev/tags/object/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://soso01.dev/tags/object/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>오브젝트 7장 객체 분해</title>
+      <link>https://soso01.dev/posts/study/object/object-07/</link>
+      <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://soso01.dev/posts/study/object/object-07/</guid>
+      <description>오브젝트 7장 객체 분해</description>
+    </item>
+    
     <item>
       <title>오브젝트 6장 메시지와 인터페이스</title>
       <link>https://soso01.dev/posts/study/object/object-06/</link>
