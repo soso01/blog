@@ -13,14 +13,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>오브젝트 11장 합성과 유연한 설계 &middot; soso01 blog</title>
-    <meta name="title" content="오브젝트 11장 합성과 유연한 설계 &middot; soso01 blog" />
+  <title>오브젝트 12장 다형성 &middot; soso01 blog</title>
+    <meta name="title" content="오브젝트 12장 다형성 &middot; soso01 blog" />
   
   <meta name="description" content="My awesome website" />
   
   
   
-  <link rel="canonical" href="https://soso01.dev/posts/study/object/object-11/" />
+  <link rel="canonical" href="https://soso01.dev/posts/study/object/object-12/" />
   
   
   
@@ -70,17 +70,17 @@
   
   
   
-  <meta property="og:title" content="오브젝트 11장 합성과 유연한 설계" />
-<meta property="og:description" content="오브젝트 11장 합성과 유연한 설계" />
+  <meta property="og:title" content="오브젝트 12장 다형성" />
+<meta property="og:description" content="오브젝트 12장 다형성" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://soso01.dev/posts/study/object/object-11/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-07-27T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-07-27T00:00:00+00:00" /><meta property="og:site_name" content="soso01 blog" />
+<meta property="og:url" content="https://soso01.dev/posts/study/object/object-12/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-30T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-07-30T00:00:00+00:00" /><meta property="og:site_name" content="soso01 blog" />
 
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="오브젝트 11장 합성과 유연한 설계"/>
-<meta name="twitter:description" content="오브젝트 11장 합성과 유연한 설계"/>
+<meta name="twitter:title" content="오브젝트 12장 다형성"/>
+<meta name="twitter:description" content="오브젝트 12장 다형성"/>
 
   
   <script type="application/ld+json">
@@ -88,26 +88,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "오브젝트 11장 합성과 유연한 설계",
-    "headline": "오브젝트 11장 합성과 유연한 설계",
-    "description": "오브젝트 11장 합성과 유연한 설계",
-    "abstract": "오브젝트 11장 합성과 유연한 설계",
+    "name": "오브젝트 12장 다형성",
+    "headline": "오브젝트 12장 다형성",
+    "description": "오브젝트 12장 다형성",
+    "abstract": "오브젝트 12장 다형성",
     "inLanguage": "ko",
-    "url" : "https:\/\/soso01.dev\/posts\/study\/object\/object-11\/",
+    "url" : "https:\/\/soso01.dev\/posts\/study\/object\/object-12\/",
     "author" : {
       "@type": "Person",
       "name": "soso01"
     },
     "copyrightYear": "2022",
-    "dateCreated": "2022-07-27T00:00:00\u002b00:00",
-    "datePublished": "2022-07-27T00:00:00\u002b00:00",
+    "dateCreated": "2022-07-30T00:00:00\u002b00:00",
+    "datePublished": "2022-07-30T00:00:00\u002b00:00",
     
-    "dateModified": "2022-07-27T00:00:00\u002b00:00",
+    "dateModified": "2022-07-30T00:00:00\u002b00:00",
     
     "keywords": ["object"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "489"
+    "wordCount": "399"
   }]
   </script>
 
@@ -275,8 +275,8 @@
   <li class="inline hidden">
     <a
       class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
-      href="/posts/study/object/object-11/"
-      >오브젝트 11장 합성과 유연한 설계</a
+      href="/posts/study/object/object-12/"
+      >오브젝트 12장 다형성</a
     ><span class="px-1 text-primary-500">/</span>
   </li>
 
@@ -285,7 +285,7 @@
 
       
       <h1 class="mt-0 mb-3 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        오브젝트 11장 합성과 유연한 설계
+        오브젝트 12장 다형성
       </h1>
       <div class="text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -320,7 +320,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2022-07-27 00:00:00 &#43;0000 UTC">2022 / 07 / 27</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
+      <time datetime="2022-07-30 00:00:00 &#43;0000 UTC">2022 / 07 / 30</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
     
 
     
@@ -364,103 +364,97 @@
       <div class="min-w-0 min-h-0">
         <h3 id="서론" class="relative group">서론 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%ec%84%9c%eb%a1%a0" aria-label="Anchor">#</a></span></h3>
 <ul>
-<li>합성은 전체를 표현하는 객체가 부분을 표현하는 객체를 포함해서 부분 객체의 코드를 재사용한다.</li>
-<li>상속에서 부모 클래스와 자식 클래스 사이의 의존성은 컴파일타임에 해결되지만 합성에서 두 객체 사이의 의존성은 런타임에 해결된다.</li>
-<li>합성은 구현에 의존하지 않는다.
+<li>11장에서 본 것 처럼 상속을 코드 재사용의 목적으로 사용하면 변경하기 어렵고 유연하지 못한 설게에 이를 확률이 높아진다.
 <ul>
-<li>합성은 내부에 포함되는 객체의 구현이 아닌 퍼블릭 인터페이스에 의존한다.</li>
-<li>합성을 이용하면 포함된 객체의 내부 구현이 변경되더라도 영향을 최소화할 수 있기 때문에 변경에 더 안정적인 코드를 얻을 수 있다.</li>
+<li>상속의 목적은 코드 재사용이 아닌, 타입 계층을 구조화하기 위해 사용해야 한다.</li>
+<li>클라이언트 관점에서 인스턴스들을 동일하게 행동하는 그룹으로 묶기 위해서이다.</li>
 </ul>
 </li>
 </ul>
-<h2 id="01-상속을-합성으로-변경하기" class="relative group">01. 상속을 합성으로 변경하기 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#01-%ec%83%81%ec%86%8d%ec%9d%84-%ed%95%a9%ec%84%b1%ec%9c%bc%eb%a1%9c-%eb%b3%80%ea%b2%bd%ed%95%98%ea%b8%b0" aria-label="Anchor">#</a></span></h2>
+<h2 id="01-다형성" class="relative group">01. 다형성 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#01-%eb%8b%a4%ed%98%95%ec%84%b1" aria-label="Anchor">#</a></span></h2>
 <ul>
-<li>10장에서 살펴본 세 가지 문제점을 합성으로 해결하자.</li>
+<li>다형성이라는 단어는 많은 형태를 가질 수 있는 능력을 의미한다.</li>
+<li>다형성의 종류
+<ul>
+<li>오버로딩 다형성
+<ul>
+<li>하나의 클래스 안에 동일한 이름의 메서드가 존재하는 경우.</li>
+<li>인자에 따라 메서드를 선택함.</li>
 </ul>
-<h3 id="불필요한-인터페이스-상속-문제" class="relative group">불필요한 인터페이스 상속 문제 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%eb%b6%88%ed%95%84%ec%9a%94%ed%95%9c-%ec%9d%b8%ed%84%b0%ed%8e%98%ec%9d%b4%ec%8a%a4-%ec%83%81%ec%86%8d-%eb%ac%b8%ec%a0%9c" aria-label="Anchor">#</a></span></h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Stack</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">	<span class="kd">private</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="n">element</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Vector</span><span class="o">&lt;&gt;();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="n">E</span> <span class="nf">push</span><span class="o">(</span><span class="n">E</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">		<span class="n">elements</span><span class="o">.</span><span class="na">addElement</span><span class="o">(</span><span class="n">item</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="n">item</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">	<span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="kd">public</span> <span class="n">E</span> <span class="nf">pop</span><span class="o">()</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="o">(</span><span class="n">elements</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">			<span class="k">throw</span> <span class="k">new</span> <span class="n">EmptyStackException</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">		<span class="o">}</span>
-</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="n">elements</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">elements</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">-</span> <span class="n">1</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">	<span class="o">}</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></div><ul>
-<li>위와 같이 상속 대신 Stack과 Vector의 관계를 합성으로 변경함으로써 퍼블릭 인터페이스의 오염을 막을 수 있다. (add 와 같은 메서드는 상속받지 않는다)</li>
+</li>
+<li>강제 다형성
+<ul>
+<li>자동적인 타입 변환이나 사용자가 직접 구현한 타입 변환을 이용해 동일한 연산자를 다양한 타입에 사용할 수 있는 방식을 가리킴.</li>
+<li>‘+’는 숫자의 덧셈이 될 수 있고, 문자열의 연결 연산자로도 사용될 수 있음.</li>
 </ul>
-<h3 id="메서드-오버라이딩의-오작용-문제" class="relative group">메서드 오버라이딩의 오작용 문제 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%eb%a9%94%ec%84%9c%eb%93%9c-%ec%98%a4%eb%b2%84%eb%9d%bc%ec%9d%b4%eb%94%a9%ec%9d%98-%ec%98%a4%ec%9e%91%ec%9a%a9-%eb%ac%b8%ec%a0%9c" aria-label="Anchor">#</a></span></h3>
+</li>
+<li>매개변수 다형성
 <ul>
-<li>자식 클래스에서 메서드를 오버라이딩했을 때 부모의 메서드에서 오버라이딩된 메서드를 사용하게 되어 사이드 이펙트가 발생할 수 있음.</li>
-<li>합성에선 부모의 구현에 영향을 주지 않고 노출한 인터페이스만 사용하기 때문에 구현 결합도를 제거할 수 있다.</li>
-<li>기존 클래스의 인터페이스를 그대로 외부에 제공하면서 구현에 대한 결합 없이 일부 작동 방식을 변경하고 싶을 때 포워딩 기법을 사용한다.</li>
+<li>제네릭 프로그래밍</li>
+<li>List<T> 와 같은 임의의 타입을 선언한 후 사용하는 시점에 구체적인 타입을 지정하는 방식</li>
 </ul>
-<h3 id="부모-클래스와-자식-클래스의-동시-수정-문제" class="relative group">부모 클래스와 자식 클래스의 동시 수정 문제 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%eb%b6%80%eb%aa%a8-%ed%81%b4%eb%9e%98%ec%8a%a4%ec%99%80-%ec%9e%90%ec%8b%9d-%ed%81%b4%eb%9e%98%ec%8a%a4%ec%9d%98-%eb%8f%99%ec%8b%9c-%ec%88%98%ec%a0%95-%eb%ac%b8%ec%a0%9c" aria-label="Anchor">#</a></span></h3>
+</li>
+<li>포함 다형성
 <ul>
-<li>합성으로 해결할 수는 없지만 그렇다고 하더라도 상속보다는 낫다.
-<ul>
-<li>내부 구현을 변경하더라도 파급효과를 합성되는 객체 안으로 캡슐화 할 수 있기 때문에.</li>
+<li>서브타입 다형성</li>
+<li>메시지가 동일하더라도 수신한 객체의 타입에 따라 실제로 수행하는 행동이 달라지는 능력</li>
 </ul>
 </li>
 </ul>
-<h2 id="02-상속으로-인한-조합의-폭발적인-증가" class="relative group">02. 상속으로 인한 조합의 폭발적인 증가 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#02-%ec%83%81%ec%86%8d%ec%9c%bc%eb%a1%9c-%ec%9d%b8%ed%95%9c-%ec%a1%b0%ed%95%a9%ec%9d%98-%ed%8f%ad%eb%b0%9c%ec%a0%81%ec%9d%b8-%ec%a6%9d%ea%b0%80" aria-label="Anchor">#</a></span></h2>
-<ul>
-<li>
-<p>상속으로 인해 결합도가 높아지면 코드를 수정하는 데 필요한 작업의 양이 과도하게 늘어나는 경향이 있다.</p>
 </li>
-<li>
-<p>일반적으로 다음과 같은 두 가지 문제점이 발생한다.</p>
+<li>포함 다형성을 위한 전제조건은 자식 클래스가 부모 클래스의 서브타입이어야 한다는 것이다.
 <ul>
-<li>하나의 기능을 추가하거나 수정하기 위해 불필요하게 많은 수의 클래스를 추가하거나 수정해야 한다.</li>
-<li>단일 상속만 제공하는 언어에서는 상속으로 인해 오히려 중복 코드의 양이 늘어날 수 있다.</li>
+<li>상속의 진정한 목적은 코드 재사용이 아니라 다형성을 위한 서브타입 계층 구축이다.</li>
 </ul>
 </li>
-<li>
-<p>클래스 폭팔</p>
-<ul>
-<li>컴파일타임에 결정된 자식 클래스와 부모 클래스 사이의 관계는 변경될 수 없기 때문에 자식 클래스와 부모 클래스의 다양한 조합이 필요한 상황에서 유일한 해결 방법은 조합의 수만큼 새로운 클래스를 추가해야 한다.</li>
-<li>기능 a, b, c 를 조합할 수 없고, 상속의 경우 a-b-c, a-c-b, b-a-c, b-c-a, … 모든 경우의 수의 조합을 클래스로 새로 생성해야 하기 때문에 필요이상으로 많은 수의 클래스가 추가된다.</li>
+<li>포함 다형성을 위해 상속을 사용하는 가장 큰 이유는 상속이 클래스들을 계층으로 쌓아 올린 후 상황에 따라 적절한 메서드를 선택할 수 있는 메커니즘을 제공하기 때문이다.</li>
 </ul>
-</li>
-</ul>
-<h2 id="03-합성-관계로-변경하기" class="relative group">03. 합성 관계로 변경하기 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#03-%ed%95%a9%ec%84%b1-%ea%b4%80%ea%b3%84%eb%a1%9c-%eb%b3%80%ea%b2%bd%ed%95%98%ea%b8%b0" aria-label="Anchor">#</a></span></h2>
+<h2 id="02-상속의-양면성" class="relative group">02. 상속의 양면성 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#02-%ec%83%81%ec%86%8d%ec%9d%98-%ec%96%91%eb%a9%b4%ec%84%b1" aria-label="Anchor">#</a></span></h2>
 <ul>
-<li>상속 관계는 컴파일타임에 결정되고 고정되기 때문에 코드를 실행하는 도중에는 변경할 수 없다.
+<li>데이터 관점의 상속 : 부모 클래스의 데이터를 자식 클래스의 인스턴스에 자동으로 포함시키는 것</li>
+<li>행동 관점의 상속 : 부모 클래스의 메서드를 자식 클래스에 포함</li>
+<li>하지만 상속의 목적은 코드 재사용이 아니다.
 <ul>
-<li>따라서 여러 기능을 조합해야 하는 설계에 상속을 이용하면 모든 조합 가능한 경우별로 클래스를 추가해야 한다.</li>
-<li>합성은 컴파일타임 관계를 런타임 관계로 변경함으로써 이 문제를 해결한다.</li>
-<li>합성을 사용하면 구현이 아닌 퍼블릭 인터페이스에 대해서만 의존할 수 있기 때문에 런타임에 객체의 관계를 변경할 수 있다.</li>
-</ul>
-</li>
-<li>예시 생략</li>
-</ul>
-<h3 id="객체-합성이-클래스-상속보다-더-좋은-방법이다" class="relative group">객체 합성이 클래스 상속보다 더 좋은 방법이다. <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%ea%b0%9d%ec%b2%b4-%ed%95%a9%ec%84%b1%ec%9d%b4-%ed%81%b4%eb%9e%98%ec%8a%a4-%ec%83%81%ec%86%8d%eb%b3%b4%eb%8b%a4-%eb%8d%94-%ec%a2%8b%ec%9d%80-%eb%b0%a9%eb%b2%95%ec%9d%b4%eb%8b%a4" aria-label="Anchor">#</a></span></h3>
-<ul>
-<li>상속은 부모 클래스의 세부적인 구현에 자식 클래스를 강하게 결합시키기 때문에 코드의 진화를 방해한다.</li>
-<li>코드를 재사용하면서도 건전한 결합도를 유지할 수 있는 좋은 방법은 합성을 이용하는 것이다.
-<ul>
-<li>단, 여기서 말하는 상속은 구현에 대한 상속이다. 인터페이스 상속에 대해서는 권장하는데 13장에 나옴.</li>
+<li>상속은 프로그램을 구성하는 개념들을 기반으로 다형성을 가능하게 하는 타입 계층을 구축하기 위한 것이다.</li>
+<li>타입 계층에 대한 고민 없이 코드를 재사용하기 위해 상속을 사용하면 이해하기 어렵고 유지보수하기 버운 코드가 만들어질 확률이 높다.</li>
 </ul>
 </li>
 </ul>
-<h2 id="04-믹스인" class="relative group">04. 믹스인 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#04-%eb%af%b9%ec%8a%a4%ec%9d%b8" aria-label="Anchor">#</a></span></h2>
+<h2 id="03-업캐스팅과-동적-바인딩" class="relative group">03. 업캐스팅과 동적 바인딩 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#03-%ec%97%85%ec%ba%90%ec%8a%a4%ed%8c%85%ea%b3%bc-%eb%8f%99%ec%a0%81-%eb%b0%94%ec%9d%b8%eb%94%a9" aria-label="Anchor">#</a></span></h2>
+<h3 id="업캐스팅" class="relative group">업캐스팅 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%ec%97%85%ec%ba%90%ec%8a%a4%ed%8c%85" aria-label="Anchor">#</a></span></h3>
 <ul>
-<li>믹스인은 객체를 생성할 때 코드 일부를 클래스 안에 섞어 넣어 재사용하는 기법을 가리키는 용어다.
+<li>상속을 이용하면 부모 클래스의 퍼블릭 인터페이스가 자식 클래스의 퍼블릭 인터페이스에 합쳐지기 때문에 부모 클래스의 인스턴스에게 전송할 수 있는 메시지를 자식 클래스의 인스턴스에게 전송할 수 있다.</li>
+<li>부모 클래스의 인스턴스 대신 자식 클래스의 인스턴스를 사용하더라도 메시지를 처리하는 데는 아무런 문제가 없으며, 컴파일러는 명시적인 타입 변환 없이도 자식 클래스가 부모 클래스를 대체할 수 있게 허용한다.</li>
+<li>컴파일러 관점에서는 자식 클래스는 아무런 제약 없이 부모를 대체할 수 있다.
 <ul>
-<li>상속은 클래스와 클래스 사이의 관계를 고정시키는 데 비해 믹스인은 유연하게 관계를 재구성할 수 있다.</li>
-<li>믹스인은 코드 재사용에 특화된 방법이면서도 상속과 같은 결합도 문제를 초래하지 않는다.</li>
+<li>따라서 부모 클래스와 협력하는 클라이언트는 다양한 자식 클래스의 인스턴스와 또한 협력이 가능하다.</li>
+<li>이 설계는 유연하며 확장이 용이하다.</li>
 </ul>
 </li>
-<li>스칼라의 트레이트 예제가 나옴
+</ul>
+<h3 id="동적-바인딩" class="relative group">동적 바인딩 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#%eb%8f%99%ec%a0%81-%eb%b0%94%ec%9d%b8%eb%94%a9" aria-label="Anchor">#</a></span></h3>
 <ul>
-<li>타스의 믹스인의 경우 <a href="https://radlohead.gitbook.io/typescript-deep-dive/type-system/mixins">https://radlohead.gitbook.io/typescript-deep-dive/type-system/mixins</a> 참고</li>
+<li>함수를 호출하는 전통적인 언어들은 호출될 함수를 컴파일타임에 결정한다.
+<ul>
+<li>정적 바인딩, 초기 바인딩, 컴파일타임 바인딩이라고도 부름</li>
+</ul>
+</li>
+<li>객체향 언어에서는 메시지를 수신했을 때 실행될 메서드가 런타임에 결정된다
+<ul>
+<li>동적 바인딩, 지연 바인딩이라고도 부름</li>
+</ul>
+</li>
+</ul>
+<h2 id="04-동적-메서드-탐색과-다형성" class="relative group">04. 동적 메서드 탐색과 다형성 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#04-%eb%8f%99%ec%a0%81-%eb%a9%94%ec%84%9c%eb%93%9c-%ed%83%90%ec%83%89%ea%b3%bc-%eb%8b%a4%ed%98%95%ec%84%b1" aria-label="Anchor">#</a></span></h2>
+<ul>
+<li>객체에서 메시지를 받으면 수행할 메서드가 있는지 확인하고, 없다면 상속된 부모 클래스로 올라가서 탐색한다.</li>
+<li>self, super 에 대한 내용</li>
+</ul>
+<h2 id="05-상속-대-위임" class="relative group">05. 상속 대 위임 <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#05-%ec%83%81%ec%86%8d-%eb%8c%80-%ec%9c%84%ec%9e%84" aria-label="Anchor">#</a></span></h2>
+<ul>
+<li>언어적인 상속 메커니즘 내용.
+<ul>
+<li>빠르게 읽고 넘어감. 나중에 다시 볼 것</li>
 </ul>
 </li>
 </ul>
@@ -557,7 +551,7 @@
       
         <a
           class="bg-neutral-300 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800 m-1 hover:bg-primary-500 hover:text-neutral rounded min-w-[2.4rem] inline-block text-center p-1"
-          href="https://www.facebook.com/sharer/sharer.php?u=https://soso01.dev/posts/study/object/object-11/&amp;quote=%ec%98%a4%eb%b8%8c%ec%a0%9d%ed%8a%b8%2011%ec%9e%a5%20%ed%95%a9%ec%84%b1%ea%b3%bc%20%ec%9c%a0%ec%97%b0%ed%95%9c%20%ec%84%a4%ea%b3%84"
+          href="https://www.facebook.com/sharer/sharer.php?u=https://soso01.dev/posts/study/object/object-12/&amp;quote=%ec%98%a4%eb%b8%8c%ec%a0%9d%ed%8a%b8%2012%ec%9e%a5%20%eb%8b%a4%ed%98%95%ec%84%b1"
           title="Share on Facebook"
           aria-label="Share on Facebook"
           >
@@ -574,7 +568,7 @@
       
         <a
           class="bg-neutral-300 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800 m-1 hover:bg-primary-500 hover:text-neutral rounded min-w-[2.4rem] inline-block text-center p-1"
-          href="https://twitter.com/intent/tweet/?url=https://soso01.dev/posts/study/object/object-11/&amp;text=%ec%98%a4%eb%b8%8c%ec%a0%9d%ed%8a%b8%2011%ec%9e%a5%20%ed%95%a9%ec%84%b1%ea%b3%bc%20%ec%9c%a0%ec%97%b0%ed%95%9c%20%ec%84%a4%ea%b3%84"
+          href="https://twitter.com/intent/tweet/?url=https://soso01.dev/posts/study/object/object-12/&amp;text=%ec%98%a4%eb%b8%8c%ec%a0%9d%ed%8a%b8%2012%ec%9e%a5%20%eb%8b%a4%ed%98%95%ec%84%b1"
           title="Tweet on Twitter"
           aria-label="Tweet on Twitter"
           >
@@ -591,7 +585,7 @@
       
         <a
           class="bg-neutral-300 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800 m-1 hover:bg-primary-500 hover:text-neutral rounded min-w-[2.4rem] inline-block text-center p-1"
-          href="https://pinterest.com/pin/create/bookmarklet/?url=https://soso01.dev/posts/study/object/object-11/&amp;description=%ec%98%a4%eb%b8%8c%ec%a0%9d%ed%8a%b8%2011%ec%9e%a5%20%ed%95%a9%ec%84%b1%ea%b3%bc%20%ec%9c%a0%ec%97%b0%ed%95%9c%20%ec%84%a4%ea%b3%84"
+          href="https://pinterest.com/pin/create/bookmarklet/?url=https://soso01.dev/posts/study/object/object-12/&amp;description=%ec%98%a4%eb%b8%8c%ec%a0%9d%ed%8a%b8%2012%ec%9e%a5%20%eb%8b%a4%ed%98%95%ec%84%b1"
           title="Pin on Pinterest"
           aria-label="Pin on Pinterest"
           >
@@ -608,7 +602,7 @@
       
         <a
           class="bg-neutral-300 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800 m-1 hover:bg-primary-500 hover:text-neutral rounded min-w-[2.4rem] inline-block text-center p-1"
-          href="https://reddit.com/submit/?url=https://soso01.dev/posts/study/object/object-11/&amp;resubmit=true&amp;title=%ec%98%a4%eb%b8%8c%ec%a0%9d%ed%8a%b8%2011%ec%9e%a5%20%ed%95%a9%ec%84%b1%ea%b3%bc%20%ec%9c%a0%ec%97%b0%ed%95%9c%20%ec%84%a4%ea%b3%84"
+          href="https://reddit.com/submit/?url=https://soso01.dev/posts/study/object/object-12/&amp;resubmit=true&amp;title=%ec%98%a4%eb%b8%8c%ec%a0%9d%ed%8a%b8%2012%ec%9e%a5%20%eb%8b%a4%ed%98%95%ec%84%b1"
           title="Submit to Reddit"
           aria-label="Submit to Reddit"
           >
@@ -625,7 +619,7 @@
       
         <a
           class="bg-neutral-300 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800 m-1 hover:bg-primary-500 hover:text-neutral rounded min-w-[2.4rem] inline-block text-center p-1"
-          href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://soso01.dev/posts/study/object/object-11/&amp;title=%ec%98%a4%eb%b8%8c%ec%a0%9d%ed%8a%b8%2011%ec%9e%a5%20%ed%95%a9%ec%84%b1%ea%b3%bc%20%ec%9c%a0%ec%97%b0%ed%95%9c%20%ec%84%a4%ea%b3%84"
+          href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://soso01.dev/posts/study/object/object-12/&amp;title=%ec%98%a4%eb%b8%8c%ec%a0%9d%ed%8a%b8%2012%ec%9e%a5%20%eb%8b%a4%ed%98%95%ec%84%b1"
           title="Share on LinkedIn"
           aria-label="Share on LinkedIn"
           >
@@ -642,7 +636,7 @@
       
         <a
           class="bg-neutral-300 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800 m-1 hover:bg-primary-500 hover:text-neutral rounded min-w-[2.4rem] inline-block text-center p-1"
-          href="mailto:?body=https://soso01.dev/posts/study/object/object-11/&amp;subject=%ec%98%a4%eb%b8%8c%ec%a0%9d%ed%8a%b8%2011%ec%9e%a5%20%ed%95%a9%ec%84%b1%ea%b3%bc%20%ec%9c%a0%ec%97%b0%ed%95%9c%20%ec%84%a4%ea%b3%84"
+          href="mailto:?body=https://soso01.dev/posts/study/object/object-12/&amp;subject=%ec%98%a4%eb%b8%8c%ec%a0%9d%ed%8a%b8%2012%ec%9e%a5%20%eb%8b%a4%ed%98%95%ec%84%b1"
           title="Send via email"
           aria-label="Send via email"
           >
@@ -669,7 +663,7 @@
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group" href="/posts/study/object/object-10/">
+            <a class="flex group" href="/posts/study/object/object-11/">
               <span
                 class="mr-3 ltr:inline rtl:hidden text-neutral-700 dark:text-neutral group-hover:text-primary-600 dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -681,11 +675,11 @@
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >오브젝트 10장 상속과 중복 코드</span
+                  >오브젝트 11장 합성과 유연한 설계</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2022-07-24 00:00:00 &#43;0000 UTC">2022 / 07 / 24</time>
+                    <time datetime="2022-07-27 00:00:00 &#43;0000 UTC">2022 / 07 / 27</time>
                   
                 </span>
               </span>
@@ -693,28 +687,6 @@
           
         </span>
         <span>
-          
-            <a class="flex text-right group" href="/posts/study/object/object-12/">
-              <span class="flex flex-col">
-                <span
-                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >오브젝트 12장 다형성</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2022-07-30 00:00:00 &#43;0000 UTC">2022 / 07 / 30</time>
-                  
-                </span>
-              </span>
-              <span
-                class="ml-3 ltr:inline rtl:hidden text-neutral-700 dark:text-neutral group-hover:text-primary-600 dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span
-                class="mr-3 ltr:hidden rtl:inline text-neutral-700 dark:text-neutral group-hover:text-primary-600 dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-            </a>
           
         </span>
       </div>
